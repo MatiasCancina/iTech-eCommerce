@@ -2,16 +2,22 @@ import Link from "next/link";
 
 export const NavBar = () => {
   return (
-    <div className="flex items-center justify-center bg-blue-300 w-full p-6">
-      <div className="" to="/">
-        ecommerce
+    <nav className="flex items-center justify-between bg-gray-800 py-6 px-16">
+      <div className="text-white font-bold">eCommerce Coderhouse</div>
+      <div className="flex space-x-10">
+        <a href="#" className="text-white">
+          1
+        </a>
+        <a href="#" className="text-white">
+          2
+        </a>
+        <a href="#" className="text-white">
+          3
+        </a>
+        <a href="#" className="text-white">
+          4
+        </a>
       </div>
-
-      {/* <button onClick={navigateHandler} className={style.creatorDogBtn}>
-            Dog Creator
-        </button> */}
-
-      {/* {location.pathname === "/home" && <SearchBar />} */}
-    </div>
+    </nav>
   );
 };
