@@ -30,7 +30,7 @@ body {
     rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    background-color: #eee;
+    background-color: rgb(235, 236, 239);
 }
 
 @layer utilities {
