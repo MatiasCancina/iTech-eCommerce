@@ -6,10 +6,10 @@ export const NavBar = () => {
       <a className="text-white font-bold text-xl">eCommerce Coderhouse</a>
       <nav className="flex justify-between gap-2">
         <a href="#" className="text-base text-slate-100 p-3 ">
-          1
+          TIENDA
         </a>
         <a href="#" className="text-base text-slate-100 p-3 ">
-          2
+          NOSOTROS
         </a>
         <a href="#" className="text-base text-slate-100 p-3 ">
           3
