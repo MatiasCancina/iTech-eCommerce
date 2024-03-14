@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <NavBar />
       <div className="py-10 lg:px-96 flex items-center justify-center">
-        <div className="bg-white rounded-xl p-5 w-11/12">
+        <div className="bg-white rounded-xl p-5 w-11/12 lg:w-full">
           <text className="z-50 relative">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
             nam iste nulla id sequi exercitationem at, culpa ex qui, corrupti ut
