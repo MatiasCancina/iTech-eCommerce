@@ -35,6 +35,7 @@ export const NavBar = () => {
 
   return (
     <div className="bg-gray-800 flex justify-center items-center flex-col">
+      {/* Desktop Nav */}
       <nav className=" w-full md:flex md:justify-between md:items-center md:border-box md:pt-6 py-6 md:px-40 hidden select-none">
         <span className="text-white font-bold text-xl w-1/2">
           eCommerce Coderhouse
@@ -72,8 +73,10 @@ export const NavBar = () => {
           </Link>
         </div>
       </nav>
+
+      {/* Mobile Nav */}
       <nav className="w-screen md:hidden">
-        <div className="block md:hidden  justify-between p-4">
+        <div className="flex md:hidden justify-between p-4">
           <button onClick={toggleMenu}>
             {isOpen ? (
               <FiX className=" text-white text-2xl" />
@@ -113,12 +116,12 @@ export const NavBar = () => {
           )}
         </AnimatePresence>
       </nav>
-      <div className="w-11/12 lg:w-1/2 rounded-xl mb-12 bg-red-600 h-40 lg:h-72 text-black flex items-center justify-center">
+
+      <div className="w-11/12 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red-600 h-40 lg:h-72 text-black flex items-center justify-center">
         publicidad
       </div>
-      <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] md:h-[67%] lg:h-[50%] xl:h-[50%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10">
-        .
-      </section>
+
+      <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] md:h-[67%] lg:h-[50%] xl:h-[50%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
     </div>
   );
 };
