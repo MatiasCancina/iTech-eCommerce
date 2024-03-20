@@ -121,7 +121,7 @@ export const NavBar = () => {
         publicidad
       </div>
 
-      <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] lg:h-[50%] xl:h-[50%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
+      <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] lg:h-[50%] xl:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
     </div>
   );
 };
