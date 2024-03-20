@@ -31,15 +31,15 @@ export const NavBar = () => {
     },
   ];
 
-  // bg-gradient-to-b from-blue-800 to-[rgb(235, 236, 239)]
-
   return (
     <div className="bg-gray-800 flex justify-center items-center flex-col">
       {/* Desktop Nav */}
-      <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96  hidden select-none">
-        <span className="text-white font-bold text-xl w-1/2">
-          eCommerce Coderhouse
-        </span>
+      <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96 hidden select-none">
+        <div>
+          <span className="text-white font-extrabold text-4xl w-1/2">
+            iTech
+          </span>
+        </div>
         <div className="flex justify-end items-center w-1/2">
           <Link
             href="#"
