@@ -8,7 +8,6 @@ import { FaRedditAlien } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className=" bottom-0 bg-white flex flex-col justify-center items-center select-none">
-      
       {/*footer boxes*/}
       <div className="flex flex-col md:flex-row justify-center items-center py-10 space-y-3 md:space-y-0 md:space-x-4 xl:space-x-5 2xl:space-x-10">
         <div className="flex flex-col justify-center items-center text-center w-11/12 lg:w-1/2 border border-gray-200 p-3 2xl:px-36 py-6 sm:py-2 md:py-6 xl:py-7 2xl:py-3 rounded-md">
@@ -61,9 +60,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center lg:justify-between w-full md:px-32 lg:px-40 xl:px-52 2xl:px-96 pb-8">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between w-full space-y-3 lg:space-y-0 md:px-32 lg:px-40 xl:px-52 2xl:px-96 pb-8">
         <div>
-          <div className="flex flex-col items-center lg:items-start space-y-2">
+          <div className="flex flex-col items-center lg:items-start space-y-3 lg:space-y-2">
             <div className="flex space-x-1">
               <div className="lg:hidden bg-red-600 p-2 rounded-lg">logo</div>
               <span className="text-gray-950 font-extrabold text-5xl">
