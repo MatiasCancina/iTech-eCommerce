@@ -15,6 +15,10 @@ export const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   const menuItems = [
     {
       text: "Shop",
@@ -41,41 +45,40 @@ export const NavBar = () => {
       {/* Desktop Nav */}
       <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96 hidden select-none">
         <div>
-          <span className="text-white font-extrabold text-4xl w-1/2">
+          <Link href={'/'} className="text-white font-extrabold text-4xl w-1/2">
             iTech
-          </span>
+          </Link>
         </div>
         <div className="flex justify-end items-center w-1/2">
-          <Link href="/">
-            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
-              Shop
-            </span>
+          <Link
+            href="/"
+            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+          >
+            Shop
           </Link>
-          <Link href="/us">
-            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
-              Us
-            </span>
+          <Link
+            href="/us"
+            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+          >
+            Us
           </Link>
-          <Link href="/contact">
-            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
-              Contact
-            </span>
+          <Link
+            href="/contact"
+            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+          >
+            Contact
           </Link>
           <Link
             href="/posts"
             className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
           >
-            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
-              Posts
-            </span>
+            Posts
           </Link>
           <Link
             href="/cart"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-slate-100 p-3 hover:bg-gray-700 rounded-full"
           >
-            <span>
-              <BsCart2 className="text-2xl" />
-            </span>
+            <BsCart2 className="text-2xl" />
           </Link>
         </div>
       </nav>
@@ -103,6 +106,7 @@ export const NavBar = () => {
               exit={{ opacity: 0, y: -10 }}
               className="bg-gray-800 absolute w-full h-screen py-1 shadow-lg"
               style={{ backdropFilter: "blur(5px)" }}
+              onClick={closeMenu}
             >
               {menuItems.map((item, index) => (
                 <motion.div
