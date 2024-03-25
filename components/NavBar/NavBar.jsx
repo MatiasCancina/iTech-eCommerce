@@ -1,12 +1,15 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,22 +17,24 @@ export const NavBar = () => {
 
   const menuItems = [
     {
-      text: "Inicio",
-      path: "#",
+      text: "Shop",
+      path: "/",
     },
     {
-      text: "Nostros",
-      path: "#",
+      text: "Us",
+      path: "/us",
     },
     {
-      text: "Contacto",
-      path: "#",
+      text: "Contact",
+      path: "/contact",
     },
     {
       text: "Posts",
-      path: "#",
+      path: "/posts",
     },
   ];
+
+  const isShopPage = pathname === "/";
 
   return (
     <div className="bg-gray-800 flex justify-center items-center flex-col">
@@ -41,35 +46,36 @@ export const NavBar = () => {
           </span>
         </div>
         <div className="flex justify-end items-center w-1/2">
-          <Link
-            href="#"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
-          >
-            Inicio
+          <Link href="/">
+            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
+              Shop
+            </span>
+          </Link>
+          <Link href="/us">
+            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
+              Us
+            </span>
+          </Link>
+          <Link href="/contact">
+            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
+              Contact
+            </span>
           </Link>
           <Link
-            href="#"
+            href="/posts"
             className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
           >
-            Nosotros
+            <span className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full">
+              Posts
+            </span>
           </Link>
           <Link
-            href="#"
+            href="/cart"
             className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
           >
-            Contacto
-          </Link>
-          <Link
-            href="#"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
-          >
-            Posts
-          </Link>
-          <Link
-            href="#"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
-          >
-            <BsCart2 className="text-2xl" />
+            <span>
+              <BsCart2 className="text-2xl" />
+            </span>
           </Link>
         </div>
       </nav>
@@ -117,11 +123,15 @@ export const NavBar = () => {
         </AnimatePresence>
       </nav>
 
-      <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red-600 h-40 lg:h-72 text-black flex items-center justify-center">
-        publicidad
-      </div>
+      {isShopPage && (
+        <>
+          <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red-600 h-40 lg:h-72 text-black flex items-center justify-center">
+            publicidad
+          </div>
 
-      <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] lg:h-[50%] xl:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
+          <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] lg:h-[50%] xl:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
+        </>
+      )}
     </div>
   );
 };
