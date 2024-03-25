@@ -9,7 +9,7 @@ export const mockData = [
     price: 200,
     id: 1,
     image: imgProductRandom,
-    type: "monitor",
+    type: "monitors",
   },
   {
     title: "monitor 2",
@@ -19,7 +19,7 @@ export const mockData = [
     price: 300,
     id: 2,
     image: imgProductRandom,
-    type: "monitor",
+    type: "monitors",
   },
   {
     title: "mouse 1",
@@ -29,7 +29,7 @@ export const mockData = [
     price: 100,
     id: 3,
     image: imgProductRandom,
-    type: "mouse",
+    type: "mouses",
   },
   {
     title: "mouse 2",
@@ -39,7 +39,7 @@ export const mockData = [
     price: 200,
     id: 4,
     image: imgProductRandom,
-    type: "mouse",
+    type: "mouses",
   },
   {
     title: "keyboard 1",
@@ -49,7 +49,7 @@ export const mockData = [
     price: 400,
     id: 5,
     image: imgProductRandom,
-    type: "keyboard",
+    type: "keyboards",
   },
   {
     title: "keyboard 2",
@@ -59,6 +59,6 @@ export const mockData = [
     price: 500,
     id: 6,
     image: imgProductRandom,
-    type: "keyboard",
+    type: "keyboards",
   },
 ];
