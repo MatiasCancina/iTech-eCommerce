@@ -32,6 +32,7 @@ body {
     rgb(var(--background-start-rgb));
     background-color: #e5e7eb;
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 
 @layer utilities {
