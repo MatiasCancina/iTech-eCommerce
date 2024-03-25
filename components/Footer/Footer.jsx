@@ -1,44 +1,57 @@
+"use client";
 import React from "react";
 import { GoMail } from "react-icons/go";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaRedditAlien } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  return (
-    <div className=" bottom-0 bg-white flex flex-col justify-center items-center select-none">
-      {/*footer boxes*/}
-      <div className="flex flex-col md:flex-row justify-center items-center py-10 space-y-3 md:space-y-0 md:space-x-4 xl:space-x-5 2xl:space-x-10">
-        <div className="flex flex-col justify-center items-center text-center w-11/12 lg:w-1/2 border border-gray-200 p-3 2xl:px-36 py-6 sm:py-2 md:py-6 xl:py-7 2xl:py-3 rounded-md">
-          <span className="font-medium text-slate-600">
-            Botón de arrepentimientio
-          </span>
-          <span className="text-sm items-center text-blue-500 cursor-pointer">
-            Cancelar compra
-          </span>
-          <span className="text-sm text-blue-500 cursor-pointer">
-            Cancelar seguro y/o garantía
-          </span>
-        </div>
-        <div className="flex flex-col justify-center items-center text-center w-11/12 lg:w-1/2 border border-gray-200 p-3 xl:px-16 rounded-md">
-          <span className="flex justify-center items-center font-medium text-slate-600">
-            Conocé las normas que aplican cuando comprás
-          </span>
-          <span className="text-sm text-blue-500 cursor-pointer">
-            Ver contratos de adhesión - Ley N.º 24.240 de Defensa del Consumidor
-          </span>
-        </div>
-      </div>
+  const pathname = usePathname();
 
-      <div className=" w-screen pb-10 lg:border-b border-gray-200">
-        <div className="flex flex-row justify-center items-center">
-          <div className="flex justify-center items-center cursor-pointer space-x-2">
-            <GoMail className="text-xl text-zinc-500" />
-            <span className="text-zinc-500 font-medium">ayuda@itech.com</span>
+  const isShopPage = pathname === "/";
+
+  return (
+    <footer className=" bottom-0 bg-white flex flex-col justify-center items-center select-none">
+      {/*footer boxes*/}
+      {isShopPage && (
+        <>
+          <div className="flex flex-col md:flex-row justify-center items-center py-10 space-y-3 md:space-y-0 md:space-x-4 xl:space-x-5 2xl:space-x-10">
+            <div className="flex flex-col justify-center items-center text-center w-11/12 lg:w-1/2 border border-gray-200 p-3 2xl:px-36 py-6 sm:py-2 md:py-6 xl:py-7 2xl:py-3 rounded-md">
+              <span className="font-medium text-slate-600">
+                Botón de arrepentimientio
+              </span>
+              <span className="text-sm items-center text-blue-500 cursor-pointer">
+                Cancelar compra
+              </span>
+              <span className="text-sm text-blue-500 cursor-pointer">
+                Cancelar seguro y/o garantía
+              </span>
+            </div>
+            <div className="flex flex-col justify-center items-center text-center w-11/12 lg:w-1/2 border border-gray-200 p-3 xl:px-16 rounded-md">
+              <span className="flex justify-center items-center font-medium text-slate-600">
+                Conocé las normas que aplican cuando comprás
+              </span>
+              <span className="text-sm text-blue-500 cursor-pointer">
+                Ver contratos de adhesión - Ley N.º 24.240 de Defensa del
+                Consumidor
+              </span>
+            </div>
           </div>
-        </div>
-      </div>
+
+          <div className=" w-screen pb-6 lg:pb-10 lg:border-b border-gray-200">
+            <div className="flex flex-row justify-center items-center">
+              <div className="flex justify-center items-center cursor-pointer space-x-2">
+                <GoMail className="text-xl text-zinc-500" />
+                <span className="text-zinc-500 font-medium">
+                  ayuda@itech.com
+                </span>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       <div className="hidden w-screen lg:flex flex-col justify-start md:px-32 lg:px-40 xl:px-52 2xl:px-96 pt-2">
         <div className="flex space-x-3 justify-center">
@@ -62,7 +75,7 @@ const Footer = () => {
 
       <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between w-full space-y-3 lg:space-y-0 md:px-32 lg:px-40 xl:px-52 2xl:px-96 pb-8">
         <div>
-          <div className="flex flex-col items-center lg:items-start space-y-3 lg:space-y-2">
+          <div className="flex flex-col items-center lg:items-start space-y-3 lg:space-y-2 pt-4 lg:pt-0">
             <div className="flex space-x-1">
               <div className="lg:hidden bg-red-600 p-2 rounded-lg">logo</div>
               <span className="text-gray-950 font-extrabold text-5xl">
@@ -85,7 +98,7 @@ const Footer = () => {
 
         <div className="hidden lg:flex bg-red-600 p-11 rounded-lg">logo</div>
       </div>
-    </div>
+    </footer>
   );
 };
 
