@@ -45,7 +45,7 @@ export const NavBar = () => {
       {/* Desktop Nav */}
       <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96 hidden select-none">
         <div>
-          <Link href={'/'} className="text-white font-extrabold text-4xl w-1/2">
+          <Link href={"/"} className="text-white font-extrabold text-4xl w-1/2">
             iTech
           </Link>
         </div>
