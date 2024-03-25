@@ -1,10 +1,8 @@
 import Footer from "@/components/Footer/Footer";
-import { NavBar } from "@/components/NavBar/NavBar";
 
 export default function Home() {
   return (
-    <div>
-      <NavBar />
+    <>
       <div className="py-10 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center">
         <div className="bg-white rounded-xl p-5 w-11/12 lg:w-full">
           <text>
@@ -52,6 +50,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
