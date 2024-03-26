@@ -4,8 +4,11 @@ import React from "react";
 
 const ProductCard = ({ item }) => {
   return (
-    <article className="basis-72 shadow-lg rounded">
-      <Link href={`/detail/${item.id}`} className="flex flex-col">
+    <article className="shadow-lg rounded m-3">
+      <Link
+        href={`/detail/${item.id}`}
+        className="flex flex-col bg-slate-400 rounded p-3"
+      >
         <Image
           alt={item.title}
           src={`${item.image.src}`}

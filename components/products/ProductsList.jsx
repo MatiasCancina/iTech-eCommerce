@@ -9,9 +9,11 @@ const ProductsList = ({ category }) => {
       : mockData.filter((item) => item.type === category);
 
   return (
-    <section>
+    <section className="grid grid-cols-4 w-10/12">
       {items.map((item) => (
-        <ProductCard key={item.id} item={item} />
+        <div className="w-full " key={item.id}>
+          <ProductCard key={item.id} item={item} />
+        </div>
       ))}
     </section>
   );

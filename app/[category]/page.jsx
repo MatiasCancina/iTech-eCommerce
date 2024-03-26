@@ -12,8 +12,7 @@ const Products = ({ params }) => {
 
   return (
     <main className="flex justify-center">
-      <h2>Products</h2>
-      <div className="flex ">
+      <div className="flex space-x-6">
         <CategoriesMenu />
         <ProductsList category={category} />
       </div>
