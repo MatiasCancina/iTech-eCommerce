@@ -8,8 +8,6 @@ const ProductsList = ({ category }) => {
       ? mockData
       : mockData.filter((item) => item.type === category);
 
-  console.log(category);
-
   return (
     <section>
       {items.map((item) => (

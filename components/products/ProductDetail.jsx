@@ -21,7 +21,7 @@ const ProductDetail = ({ id }) => {
       </section>
       <section className="mt-12">
         <h3 className="text-xl font-semibold border-b border-gray-200 pb-4 my-4">
-          Descrition
+          Description
         </h3>
         <p className="text-gray-600">{item.description}</p>
       </section>
