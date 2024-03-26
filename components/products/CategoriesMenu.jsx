@@ -5,19 +5,19 @@ import { usePathname } from "next/navigation";
 const links = [
   {
     label: "All",
-    href: "/products/all",
+    href: "/",
   },
   {
     label: "Mouses",
-    href: "/products/mouses",
+    href: "/mouses",
   },
   {
     label: "Monitors",
-    href: "/products/monitors",
+    href: "/monitors",
   },
   {
     label: "Keyboards",
-    href: "/products/keyboards",
+    href: "/keyboards",
   },
 ];
 
