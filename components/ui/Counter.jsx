@@ -5,7 +5,7 @@ const Counter = ({ counter, setCounter, max }) => {
   const decrease = () => counter > 1 && setCounter(counter - 1);
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex justify-center items-center gap-3 select-none">
       <button onClick={decrease} className="active:bg-blue-600">
         -
       </button>

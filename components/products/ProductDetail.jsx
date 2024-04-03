@@ -2,29 +2,41 @@ import { mockData } from "@/data/mockdata";
 import Image from "next/image";
 import QtySelector from "./QtySelector";
 
-const ProductDetail = ({ id }) => {
-  const item = mockData.find((p) => p.id === id);
+const ProductDetail = ({ item }) => {
+  // const item = mockData.find((p) => p.id === id);
+
+  // console.log(item);
+
+  if (!item) {
+    return <div>Loading...</div>; // Manejar el caso cuando el objeto item no está definido
+  }
 
   return (
-    <div>
-      <section className="flex gap-6">
-        <div className="relative basis-1/2">
-          <Image src={item.image} alt={item.title} width={800} height={800} />
+    <div className="py-12 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
+      <div className="bg-white rounded-xl p-6 w-11/12 lg:w-full">
+        <div className="flex flex-col items-center">
+          <div className="flex flex-row">
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={500}
+              height={500}
+              style={{ objectFit: "contain" }}
+              priority
+            />
+            <div className="flex flex-col space-y-3">
+              <div>
+                <h2 className="text-3xl font-semibold border-b border-gray-200 pb-4 mb-4">
+                  {item.title}
+                </h2>
+                <p className="text-4xl font-light">${item.price}</p>
+              </div>
+              <p className="text-gray-600 w-72">{item.description}</p>
+              <QtySelector item={item} />
+            </div>
+          </div>
         </div>
-        <div className="basis-1/2">
-          <h2 className="text-2xl font-semibold border-b border-gray-200 pb-4 mb-4">
-            {item.title}
-          </h2>
-          <p>{item.price}</p>
-          <QtySelector item={item} />
-        </div>
-      </section>
-      <section className="mt-12">
-        <h3 className="text-xl font-semibold border-b border-gray-200 pb-4 my-4">
-          Description
-        </h3>
-        <p className="text-gray-600">{item.description}</p>
-      </section>
+      </div>
     </div>
   );
 };
