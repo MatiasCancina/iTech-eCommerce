@@ -1,21 +1,12 @@
-import { mockData } from "@/data/mockdata";
 import Image from "next/image";
 import QtySelector from "./QtySelector";
 
 const ProductDetail = ({ item }) => {
-  // const item = mockData.find((p) => p.id === id);
-
-  // console.log(item);
-
-  if (!item) {
-    return <div>Loading...</div>; // Manejar el caso cuando el objeto item no está definido
-  }
-
   return (
     <div className="py-12 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
       <div className="bg-white rounded-xl p-6 w-11/12 lg:w-full">
         <div className="flex flex-col items-center">
-          <div className="flex flex-row">
+          <div className="flex flex-col lg:flex-row">
             <Image
               src={item.image}
               alt={item.title}
