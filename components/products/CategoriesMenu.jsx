@@ -25,14 +25,14 @@ const CategoriesMenu = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="flex flex-col gap-3">
+    <aside className="flex justify-center items-center md:flex-col md:justify-start md:items-start gap-3">
       {links.map((link) => (
         <Link
           key={link.label}
           href={link.href}
           className={`${
             pathname === link.href ? "font-semibold border-b" : ""
-          } py-2 text-lg`}
+          } sm:py-2 text-lg w-full`}
         >
           {link.label}
         </Link>
