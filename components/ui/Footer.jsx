@@ -57,7 +57,7 @@ const Footer = () => {
         </>
       )}
 
-      <div className="hidden w-screen lg:flex flex-col justify-start md:px-32 lg:px-40 xl:px-52 2xl:px-96 pt-2">
+      <div className="hidden w-screen lg:flex flex-col justify-start md:px-32 lg:px-40 xl:px-52 2xl:px-96 pt-3">
         <div className="flex space-x-3 justify-center">
           <span className="flex text-sm text-slate-900 cursor-pointer text-center">
             Trabajá con nosotros
