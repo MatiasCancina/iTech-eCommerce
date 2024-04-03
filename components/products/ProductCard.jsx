@@ -7,9 +7,9 @@ const ProductCard = ({ item }) => {
     <article className="shadow-lg rounded m-3 hover:translate-y-1 hover:shadow-2xl transition">
       <Link
         href={`/detail/${item.id}`}
-        className="flex flex-col rounded py-3 border "
+        className="flex flex-col rounded border "
       >
-        <div className="border-b border-gray-200 mb-2">
+        <div className="border-b border-gray-200 p-3 mb-2">
           <Image
             alt={item.title}
             src={`${item.image.src}`}
@@ -19,7 +19,7 @@ const ProductCard = ({ item }) => {
           />
         </div>
 
-        <div className="space-y-2 px-3">
+        <div className="space-y-2 p-3">
           <h4>{item.title}</h4>
           <p className="text-lg lg:text-2xl font-medium">${item.price}</p>
         </div>
