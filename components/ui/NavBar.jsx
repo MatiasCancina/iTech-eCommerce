@@ -6,6 +6,8 @@ import { BsCart2 } from "react-icons/bs";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import itech_logo from "@/public/itech_logo.png";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +50,13 @@ export const NavBar = () => {
     <div className="bg-gray-800 flex justify-center items-center flex-col">
       {/* Desktop Nav */}
       <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96 hidden select-none">
-        <div>
-          <Link href={"/"} className="text-white font-extrabold text-4xl w-1/2">
-            iTech
+        <div className="relative">
+          <Link
+            href={"/"}
+            className="flex justify-center items-center text-white font-extrabold text-4xl w-1/2"
+          >
+            <Image src={itech_logo} width={62} height={62} alt="itech logo" />
+            <p>iTech</p>
           </Link>
         </div>
         <div className="flex justify-end items-center w-1/2">
@@ -97,6 +103,11 @@ export const NavBar = () => {
               <FiMenu className=" text-white text-2xl" />
             )}
           </button>
+          
+          <Link href={"/"}>
+            <Image src={itech_logo} width={60} height={60} alt="itech logo" />
+          </Link>
+
           <Link href="/cart" className="text-slate-100 p-3 rounded-full">
             <BsCart2 className="text-2xl" />
           </Link>

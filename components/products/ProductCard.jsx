@@ -21,7 +21,7 @@ const ProductCard = ({ item }) => {
 
         <div className="space-y-2 px-3">
           <h4>{item.title}</h4>
-          <p className="text-2xl">${item.price}</p>
+          <p className="text-lg lg:text-2xl font-medium">${item.price}</p>
         </div>
       </Link>
     </article>

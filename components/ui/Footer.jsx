@@ -6,6 +6,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaRedditAlien } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import itech_logo from "@/public/itech_logo.png";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -80,8 +82,15 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between w-full space-y-3 lg:space-y-0 md:px-32 lg:px-40 xl:px-52 2xl:px-96 pb-8">
         <div>
           <div className="flex flex-col items-center lg:items-start space-y-3 lg:space-y-2 pt-4 lg:pt-0">
-            <div className="flex space-x-1">
-              <div className="lg:hidden bg-red-600 p-2 rounded-lg">logo</div>
+            <div className="flex space-x-1 justify-center items-center">
+              <Image
+                src={itech_logo}
+                width={70}
+                height={70}
+                alt="itech logo"
+                className="lg:hidden"
+              />
+              {/* <div className="lg:hidden bg-red-600 p-2 rounded-lg">logo</div> */}
               <span className="text-gray-950 font-extrabold text-5xl">
                 iTech
               </span>
@@ -100,7 +109,14 @@ const Footer = () => {
           <FaRedditAlien className="border-2 border-gray-800 rounded-full p-1 text-4xl cursor-pointer" />
         </div>
 
-        <div className="hidden lg:flex bg-red-600 p-11 rounded-lg">logo</div>
+        <Image
+          src={itech_logo}
+          width={100}
+          height={100}
+          alt="itech logo"
+          className="hidden lg:flex"
+        />
+        {/* <div className="hidden lg:flex bg-red-600 p-11 rounded-lg">logo</div> */}
       </div>
     </footer>
   );

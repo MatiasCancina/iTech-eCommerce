@@ -3,7 +3,7 @@ import QtySelector from "./QtySelector";
 
 const ProductDetail = ({ item }) => {
   return (
-    <div className="py-12 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
+    <div className="py-16 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
       <div className="bg-white rounded-xl p-6 w-11/12 lg:w-full">
         <div className="flex flex-col items-center">
           <div className="flex flex-col lg:flex-row">
