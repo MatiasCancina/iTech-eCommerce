@@ -6,11 +6,11 @@ const Counter = ({ counter, setCounter, max }) => {
 
   return (
     <div className="flex justify-center items-center gap-3 select-none">
-      <button onClick={decrease} className="active:bg-blue-600">
+      <button onClick={decrease}>
         -
       </button>
       <p>{counter}</p>
-      <button onClick={increase} className="active:bg-blue-600">
+      <button onClick={increase}>
         +
       </button>
     </div>
