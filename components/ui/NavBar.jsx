@@ -38,7 +38,11 @@ export const NavBar = () => {
     },
   ];
 
-  const isShopPage = pathname === "/";
+  const isShopPage =
+    pathname === "/" ||
+    pathname === "/monitors" ||
+    pathname === "/mouses" ||
+    pathname === "/keyboards";
 
   return (
     <div className="bg-gray-800 flex justify-center items-center flex-col">

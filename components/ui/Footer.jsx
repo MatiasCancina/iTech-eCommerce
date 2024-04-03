@@ -10,7 +10,11 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
 
-  const isShopPage = pathname === "/";
+  const isShopPage =
+    pathname === "/" ||
+    pathname === "/monitors" ||
+    pathname === "/mouses" ||
+    pathname === "/keyboards";
 
   return (
     <footer className=" bottom-0 bg-white flex flex-col justify-center items-center select-none">
