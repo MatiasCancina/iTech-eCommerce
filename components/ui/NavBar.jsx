@@ -8,6 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import itech_logo from "@/public/itech_logo.png";
+import { FiShoppingCart } from "react-icons/fi";
+import { TiGroup } from "react-icons/ti";
+import { IoMdContact } from "react-icons/io";
+import { BsPostcardFill } from "react-icons/bs";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,18 +29,22 @@ export const NavBar = () => {
     {
       text: "Shop",
       path: "/",
+      icon: <FiShoppingCart />,
     },
     {
       text: "Us",
       path: "/us",
+      icon: <TiGroup />,
     },
     {
       text: "Contact",
       path: "/contact",
+      icon: <IoMdContact />,
     },
     {
       text: "Posts",
       path: "/posts",
+      icon: <BsPostcardFill />,
     },
   ];
 
@@ -103,7 +111,7 @@ export const NavBar = () => {
               <FiMenu className=" text-white text-2xl" />
             )}
           </button>
-          
+
           <Link href={"/"}>
             <Image src={itech_logo} width={60} height={60} alt="itech logo" />
           </Link>
@@ -133,7 +141,8 @@ export const NavBar = () => {
                   transition={{ delay: 0.1 + index * 0.1 }}
                 >
                   <Link href={item.path}>
-                    <div className="flex justify-start items-center px-4 py-2 hover:bg-gray-600">
+                    <div className="flex justify-start items-center px-4 py-2 hover:bg-gray-600 space-x-5">
+                      <p className="text-white text-3xl">{item.icon}</p>
                       <p className="ml-2 text-md text-white">{item.text}</p>
                     </div>
                   </Link>
