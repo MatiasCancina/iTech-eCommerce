@@ -1,5 +1,3 @@
-import React from "react";
-import ProductList from "@/components/products/ProductsList";
 import CategoriesMenu from "../products/CategoriesMenu";
 import ProductsList from "@/components/products/ProductsList";
 
