@@ -97,7 +97,9 @@ export const NavBar = () => {
               <FiMenu className=" text-white text-2xl" />
             )}
           </button>
-          <BsCart2 className="text-white text-2xl" />
+          <Link href="/cart" className="text-slate-100 p-3 rounded-full">
+            <BsCart2 className="text-2xl" />
+          </Link>
         </div>
 
         {/* Mobile Dropdown Menu */}
