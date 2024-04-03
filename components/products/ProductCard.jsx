@@ -4,22 +4,24 @@ import React from "react";
 
 const ProductCard = ({ item }) => {
   return (
-    <article className="shadow-lg rounded m-3">
+    <article className="shadow-lg rounded m-3 hover:translate-y-1 hover:shadow-2xl transition">
       <Link
         href={`/detail/${item.id}`}
-        className="flex flex-col bg-slate-400 rounded p-3"
+        className="flex flex-col rounded p-3 border "
       >
-        <Image
-          alt={item.title}
-          src={`${item.image.src}`}
-          width={200}
-          height={200}
-          style={{ objectFit: "contain" }}
-        />
+        <div className="border-b border-gray-200 mb-2">
+          <Image
+            alt={item.title}
+            src={`${item.image.src}`}
+            width={200}
+            height={200}
+            style={{ objectFit: "contain" }}
+          />
+        </div>
 
-        <div>
+        <div className="space-y-2">
           <h4>{item.title}</h4>
-          <p>{item.price}</p>
+          <p className="text-2xl">${item.price}</p>
         </div>
       </Link>
     </article>
