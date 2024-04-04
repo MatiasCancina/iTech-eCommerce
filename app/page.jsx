@@ -1,4 +1,4 @@
-import ProductsAll from "@/components/ProductsAll/ProductsAll";
+import ProductsAll from "@/components/products/ProductsAll";
 
 export default function Home() {
   return (

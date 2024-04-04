@@ -1,4 +1,4 @@
-import CategoriesMenu from "../products/CategoriesMenu";
+import CategoriesMenu from "./CategoriesMenu";
 import ProductsList from "@/components/products/ProductsList";
 
 const ProductsAll = () => {
