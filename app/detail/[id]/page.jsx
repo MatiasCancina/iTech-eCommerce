@@ -3,12 +3,8 @@ import { mockData } from "@/data/mockdata";
 
 const Detail = ({ params }) => {
   const { id } = params;
-
-  const product = mockData.find((p) => {
-    return p.id === parseInt(id, 10);
-  });
-
-  return <ProductDetail item={product} />;
+  
+  return <ProductDetail id={id} />;
 };
 
 export default Detail;
