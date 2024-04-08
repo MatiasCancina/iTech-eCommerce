@@ -55,7 +55,7 @@ export const NavBar = () => {
     pathname === "/keyboards";
 
   return (
-    <div className="bg-gray-800 flex justify-center items-center flex-col">
+    <div className="bg-darkBlue flex justify-center items-center flex-col">
       {/* Desktop Nav */}
       <nav className=" w-full lg:flex lg:justify-between lg:items-center lg:border-box lg:pt-6 py-6 md:px-32 lg:px-40 xl:px-52 2xl:px-96 hidden select-none">
         <div className="relative">
@@ -70,31 +70,31 @@ export const NavBar = () => {
         <div className="flex justify-end items-center w-1/2">
           <Link
             href="/"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-base text-white p-3 hover:bg-navBtnHover rounded-full"
           >
             Shop
           </Link>
           <Link
             href="/us"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-base text-white p-3 hover:bg-navBtnHover rounded-full"
           >
             Us
           </Link>
           <Link
             href="/contact"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-base text-white p-3 hover:bg-navBtnHover rounded-full"
           >
             Contact
           </Link>
           <Link
             href="/posts"
-            className="text-base text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-base text-white p-3 hover:bg-navBtnHover rounded-full"
           >
             Posts
           </Link>
           <Link
             href="/cart"
-            className="text-slate-100 p-3 hover:bg-gray-700 rounded-full"
+            className="text-white p-3 hover:bg-navBtnHover rounded-full"
           >
             <BsCart2 className="text-2xl" />
           </Link>
@@ -116,7 +116,7 @@ export const NavBar = () => {
             <Image src={itech_logo} width={60} height={60} alt="itech logo" />
           </Link>
 
-          <Link href="/cart" className="text-slate-100 p-3 rounded-full">
+          <Link href="/cart" className="text-white p-3 rounded-full">
             <BsCart2 className="text-2xl" />
           </Link>
         </div>
