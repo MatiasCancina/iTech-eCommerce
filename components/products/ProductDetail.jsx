@@ -1,38 +1,13 @@
-'use client'
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import QtySelector from "./QtySelector";
 
-const ProductDetail = ({ id }) => {
-  const [item, setItem] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:3000/api/product/${id}`,
-          {
-            cache: "force-cache",
-          }
-        );
-        const data = await response.json();
-        setItem(data);
-      } catch (error) {
-        setError("Error fetching data");
-      }
-    };
-
-    fetchData();
-  }, [id]);
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!item) {
-    return <div className="flex justify-center items-center">Loading...</div>;
-  }
+const ProductDetail = async ({ id }) => {
+  const item = await fetch(`http://localhost:3000/api/product/${id}`, {
+      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
+    }).then((res) => res.json());
 
   return (
     <div className="py-16 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
