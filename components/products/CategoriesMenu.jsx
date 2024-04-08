@@ -31,7 +31,7 @@ const CategoriesMenu = () => {
           key={link.label}
           href={link.href}
           className={`${
-            pathname === link.href ? "font-semibold border-b" : ""
+            pathname === link.href ? "font-semibold border-b-2 border-borderGray" : ""
           } sm:py-2 text-lg w-full text-center lg:text-start`}
         >
           {link.label}
