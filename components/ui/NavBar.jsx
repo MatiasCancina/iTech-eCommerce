@@ -129,7 +129,7 @@ export const NavBar = () => {
               initial={{ opacity: 0, y: -7 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-gray-800 absolute w-full h-screen py-1 shadow-lg"
+              className="bg-darkBlue absolute w-full h-screen py-1 shadow-lg"
               style={{ backdropFilter: "blur(5px)" }}
               onClick={closeMenu}
             >
@@ -141,7 +141,7 @@ export const NavBar = () => {
                   transition={{ delay: 0.1 + index * 0.1 }}
                 >
                   <Link href={item.path}>
-                    <div className="flex justify-start items-center px-4 py-2 hover:bg-gray-600 space-x-5">
+                    <div className="flex justify-start items-center px-4 py-2 hover:bg-navBtnHover space-x-5">
                       <p className="text-white text-3xl">{item.icon}</p>
                       <p className="ml-2 text-md text-white">{item.text}</p>
                     </div>
@@ -155,11 +155,11 @@ export const NavBar = () => {
 
       {isShopPage && (
         <>
-          <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red-600 h-40 lg:h-72 text-black flex items-center justify-center">
+          <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red h-40 lg:h-72 flex items-center justify-center">
             publicidad
           </div>
 
-          <section className="flex justify-start text-gray-800 absolute bottom-0 w-full h-[66%] sm:h-[69%] lg:h-[50%] xl:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-gray-800 -z-10" />
+          <section className="flex justify-start text-darkBlue absolute bottom-0 w-full h-[62%] sm:h-[65%] lg:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-darkBlue -z-10" />
         </>
       )}
     </div>
