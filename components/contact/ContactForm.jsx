@@ -22,7 +22,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" my-10 px-96">
+    <div className=" my-16 px-96">
       <h1 className="font-semibold text-4xl border-b border-gray text-cyan">CONTACT US</h1>
       <div className="flex justify-center items-center">
         <form onSubmit={handleSubmit} className="grid gap-4 w-3/4 my-3">
