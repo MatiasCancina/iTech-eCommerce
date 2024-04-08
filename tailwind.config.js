@@ -9,10 +9,14 @@ module.exports = {
     colors: {
       'darkBlue': '#1d3557',
       'navBtnHover': '#002855',
+      'blueLink': '#0d41e1',
       'cyan': '#457b9d',
       'lightBue': '#a8dadc',
       'white': '#f8f9fa',
       'red': '#ff002b',
+      'black': '#000814',
+      'borderGray': '#e5e5e5',
+      'gray': '#adb5bd'
     },
 
   },
