@@ -19,13 +19,13 @@ const QtySelector = ({ item }) => {
       <div className="flex flex-col "></div>
       <Link
         href={"/cart"}
-        className="bg-gray-800 text-white rounded py-3 flex items-center justify-center"
+        className="bg-cyan text-white rounded py-3 flex items-center justify-center"
         onClick={handleAdd}
       >
         Buy now
       </Link>
       <button
-        className="bg-slate-300 text-gray-800 font-medium rounded py-3"
+        className="bg-white text-cyan border borer-cyan font-medium rounded py-3"
         onClick={handleAdd}
       >
         Add to cart

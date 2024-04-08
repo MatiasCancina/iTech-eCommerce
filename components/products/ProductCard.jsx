@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const ProductCard = ({ item }) => {
   return (
-    <article className="shadow-lg rounded m-3 hover:translate-y-1 hover:shadow-2xl  transition">
+    <article className="shadow-lg rounded m-3 hover:translate-y-1 hover:shadow-2xl transition">
       <Link
         href={`/detail/${item.id}`}
-        className="flex flex-col rounded border"
+        className="flex flex-col rounded border border-borderGray"
       >
         <div className="border-b border-b-borderGray p-3 mb-2">
           <Image
