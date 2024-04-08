@@ -38,7 +38,7 @@ const ContactForm = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="grid gap-4 xl:w-3/4 my-6 sm:my-3"
+          className="grid gap-4 xl:w-3/4 my-6"
         >
           <div className="grid grid-cols-2 gap-4">
             <input
