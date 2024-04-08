@@ -23,30 +23,30 @@ const ContactForm = () => {
 
   return (
     <div className=" my-10 px-96">
-      <h1 className="font-semibold text-4xl border-b border-gray-400">CONTACT US</h1>
+      <h1 className="font-semibold text-4xl border-b border-gray text-cyan">CONTACT US</h1>
       <div className="flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="grid  gap-4 w-3/4 my-3">
+        <form onSubmit={handleSubmit} className="grid gap-4 w-3/4 my-3">
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="First Name"
               name="firstName"
               onChange={handleChange}
-              className="p-2 rounded-xl border border-blue-100 h-14 text-lg"
+              className="p-2 rounded-xl border border-lightBue h-14 text-lg text-black"
             />
             <input
               type="text"
               placeholder="Last Name"
               name="lastName"
               onChange={handleChange}
-              className="p-2 rounded-xl border border-blue-100 h-14 text-lg"
+              className="p-2 rounded-xl border border-lightBue h-14 text-lg text-black"
             />
           </div>
           <input
             type="email"
             required
             placeholder="Email Adress"
-            className="p-2 rounded-xl border border-blue-100 h-14 text-lg"
+            className="p-2 rounded-xl border border-lightBue h-14 text-lg text-black"
             name="email"
             onChange={handleChange}
           />
@@ -54,13 +54,13 @@ const ContactForm = () => {
           <textarea
             required
             placeholder="Leave us your message"
-            className="resize-none h-24 p-2 rounded-xl border border-blue-100 text-lg"
+            className="resize-none h-24 p-2 rounded-xl border border-lightBue text-lg text-black"
             name="text"
             onChange={handleChange}
           />
 
           <div className="flex justify-end items-end">
-            <button type="submit" className="bg-slate-400 py-3 px-10">
+            <button type="submit" className="bg-cyan py-3 px-10 text-white shadow-md">
               Submit
             </button>
           </div>
