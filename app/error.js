@@ -1,7 +1,19 @@
-"use client";
+// Error.
+'use client'
+import { useEffect } from 'react';
 
-const handleError = (error) => {
-  return <div>error page</div>;
-};
+export default function Error({ errorMessage, reset }) {
+  useEffect(() => {
+    // Log the error to an error reporting service
+    console.error(errorMessage);
 
-export default handleError;
+    // Set a user-friendly error message
+  }, [errorMessage]);
+
+  return (
+    <div>
+      <h2>{errorMessage}</h2>
+      <button onClick={reset}>Try again</button>
+    </div>
+  );
+}
