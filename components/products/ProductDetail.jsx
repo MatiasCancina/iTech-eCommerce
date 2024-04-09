@@ -2,7 +2,7 @@ import Image from "next/image";
 import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ id }) => {
-  const item = await fetch(`http://127.0.0.1:3000/api/product/${id}`, {
+  const item = await fetch(`http://localhost:3000/api/product/${id}`, {
       cache: "no-store",
       next: {
         revalidate: 0,
