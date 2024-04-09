@@ -2,8 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <>
-      <di className="flex justify-start items-center flex-col py-52 select-none ">
+      <div className="flex justify-start items-center flex-col py-52 select-none ">
         <div className="py-2">
           <h1 className="text-9xl text-gray font-thin">SORRY</h1>
           <p className="text-5xl text-gray font-light">
@@ -18,7 +17,6 @@ export default function NotFound() {
             </Link>
           </div>
         </div>
-      </di>
-    </>
+      </div>
   );
 }
