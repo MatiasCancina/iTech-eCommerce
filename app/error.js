@@ -1,6 +1,7 @@
 // Error.
 'use client'
 import { useEffect } from 'react';
+import ErrorUI from '../components/ui/Error.jsx';
 
 export default function Error({ errorMessage, reset }) {
   useEffect(() => {
@@ -11,9 +12,5 @@ export default function Error({ errorMessage, reset }) {
   }, [errorMessage]);
 
   return (
-    <div>
-      <h2>{errorMessage}</h2>
-      <button onClick={reset}>Try again</button>
-    </div>
-  );
+<ErrorUI/>  );
 }
