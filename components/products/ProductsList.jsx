@@ -3,6 +3,9 @@ import ProductCard from "./ProductCard";
 const ProductsList = async ({ category }) => {
   const items = await fetch(`http://localhost:3000//api/products/${category}`, {
     cache: "force-cache",
+    next: {
+      revalidate: 30,
+    },
   }).then((r) => r.json());
 
   return (
