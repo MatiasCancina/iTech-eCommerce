@@ -7,8 +7,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'darkBlue': '#1d3557',
-      'navBtnHover': '#002855',
+      'navBtnHover': '#1d3557',
+      'darkBlue': '#002855',
       'blueLink': '#0d41e1',
       'cyan': '#457b9d',
       'lightBue': '#a8dadc',
