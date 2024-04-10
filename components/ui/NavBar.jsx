@@ -159,7 +159,7 @@ export const NavBar = () => {
             publicidad
           </div>
 
-          <section className="flex justify-start text-darkBlue absolute bottom-0 w-full h-[62%] sm:h-[65%] lg:h-[48%] 2xl:h-[53%] bg-gradient-to-b from-darkBlue -z-10" />
+          <section className="flex justify-start text-darkBlue absolute bottom-0 w-full h-[63%] sm:h-[67%] lg:h-[49%] 2xl:h-[53%] bg-gradient-to-b from-darkBlue -z-10" />
         </>
       )}
     </div>

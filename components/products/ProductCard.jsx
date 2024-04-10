@@ -8,7 +8,7 @@ const ProductCard = ({ item }) => {
         href={`/detail/${item.id}`}
         className="flex flex-col rounded border border-borderGray"
       >
-        <div className="border-b border-b-borderGray p-3 mb-2">
+        <div className="border-b border-b-borderGray p-3 mb-2 flex justify-center items-center">
           <Image
             alt={item.title}
             src={`${item.image.src}`}
