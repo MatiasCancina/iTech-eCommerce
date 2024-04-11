@@ -1,22 +1,22 @@
-import { mockData } from "@/data/mockdata";
 import { NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
-
-const sleep = (timer) => {
-  return new Promise((resolve) => setTimeout(resolve, timer));
-};
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "@/firebase/config";
 
 export async function GET(request, { params }) {
   const { category } = params;
 
-  const data =
-    category === "all"
-      ? mockData
-      : mockData.filter((item) => item.type === category);
+  const productsRef = collection(db, "products");
 
-  await sleep(1000);
+  const q =
+    category == "all"
+      ? productsRef
+      : query(productsRef, where("type", "==", category));
 
-  revalidatePath("/");
+  const querySnapshot = await getDocs(q);
 
-  return NextResponse.json(data);
+  const docs = querySnapshot.docs.map((doc) => doc.data());
+
+  console.log("ROUTE DOCS", docs);
+
+  return NextResponse.json(docs);
 }
