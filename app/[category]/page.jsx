@@ -4,6 +4,21 @@ import ProductsList from "@/components/products/ProductsList";
 import { Suspense } from "react";
 import Loader from "@/components/ui/Loader";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  return { title: `iTech - ${params.category}` };
+}
+
+export function generateStaticParams() {
+  return [
+    { category: "all" },
+    { category: "mouses" },
+    { category: "monitors" },
+    { category: "keyboards" },
+  ];
+}
+
+export const revalidate = 3600 // 1 hour
+
 const Products = ({ params }) => {
   const { category } = params;
 
@@ -14,7 +29,7 @@ const Products = ({ params }) => {
       category !== "monitors" &&
       category !== "keyboards"
     ) {
-      throw Error("salto el error pa");
+      throw Error("Page not found!");
     }
 
     return (
