@@ -8,10 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import itech_logo from "@/public/itech_logo.png";
-import { FiShoppingCart } from "react-icons/fi";
-import { TiGroup } from "react-icons/ti";
-import { IoMdContact } from "react-icons/io";
-import { BsPostcardFill } from "react-icons/bs";
+import { GrGroup } from "react-icons/gr";
+import { IoMailOutline } from "react-icons/io5";
+import { BsPostcard } from "react-icons/bs";
+import CartWidget from "../cart/CartWidget";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,22 +29,22 @@ export const NavBar = () => {
     {
       text: "Shop",
       path: "/",
-      icon: <FiShoppingCart />,
+      icon: <BsCart2 />,
     },
     {
       text: "Us",
       path: "/us",
-      icon: <TiGroup />,
+      icon: <GrGroup />,
     },
     {
       text: "Contact",
       path: "/contact",
-      icon: <IoMdContact />,
+      icon: <IoMailOutline />,
     },
     {
       text: "Posts",
       path: "/posts",
-      icon: <BsPostcardFill />,
+      icon: <BsPostcard />,
     },
   ];
 
@@ -67,7 +67,7 @@ export const NavBar = () => {
             <p>iTech</p>
           </Link>
         </div>
-        <div className="flex justify-end items-center w-1/2">
+        <div className="flex justify-end items-center">
           <Link
             href="/"
             className="text-base text-white p-3 hover:bg-navBtnHover rounded-full"
@@ -92,12 +92,7 @@ export const NavBar = () => {
           >
             Posts
           </Link>
-          <Link
-            href="/cart"
-            className="text-white p-3 hover:bg-navBtnHover rounded-full"
-          >
-            <BsCart2 className="text-2xl" />
-          </Link>
+          <CartWidget />
         </div>
       </nav>
 
