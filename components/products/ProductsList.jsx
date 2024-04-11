@@ -1,12 +1,14 @@
 import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ category }) => {
-  const items = await fetch(`http://localhost:3000//api/products/${category}`, {
+  const items = await fetch(`http://localhost:3000/api/products/${category}`, {
     cache: "force-cache",
     next: {
       revalidate: 30,
     },
   }).then((r) => r.json());
+
+  console.log("ITEMS", items);
 
   return (
     <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
