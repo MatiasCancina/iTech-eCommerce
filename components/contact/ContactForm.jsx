@@ -73,7 +73,7 @@ const ContactForm = () => {
             onChange={handleChange}
           />
 
-          <div className="flex justify-end items-end">
+          <div className="flex justify-end">
             <button
               type="submit"
               className="bg-cyan py-3 px-6 sm:px-10 text-white shadow-md"
