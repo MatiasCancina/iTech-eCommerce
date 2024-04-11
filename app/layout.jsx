@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/ui/NavBar";
 import Footer from "@/components/ui/Footer";
+import { CartProvider } from "@/components/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="../public/itech_logo.png" />
       </head>
       <body className={inter.className}>
-        <NavBar />
-        {children}
-      <Footer />
+        <CartProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
