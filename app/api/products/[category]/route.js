@@ -16,7 +16,5 @@ export async function GET(request, { params }) {
 
   const docs = querySnapshot.docs.map((doc) => doc.data());
 
-  console.log("ROUTE DOCS", docs);
-
   return NextResponse.json(docs);
 }
