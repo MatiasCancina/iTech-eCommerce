@@ -4,11 +4,11 @@ const Counter = ({ counter, setCounter, max }) => {
 
   return (
     <div className="flex justify-center items-center gap-3 select-none text-lg">
-      <button onClick={decrease}>
+      <button onClick={decrease} className="bg-cyan text-white rounded px-3 py-1 flex items-center justify-center">
         -
       </button>
-      <p>{counter}</p>
-      <button onClick={increase}>
+      <p className="flex justify-center items-center w-5">{counter}</p>
+      <button onClick={increase} className="bg-cyan text-white rounded px-3 py-1 flex items-center justify-center">
         +
       </button>
     </div>
