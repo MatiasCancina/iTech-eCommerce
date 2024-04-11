@@ -30,7 +30,7 @@ const Cart = () => {
         <h2 className="text-black text-2xl pb-3 my-3 border-b border-borderGray">
           Total: {totalPrice()}{" "}
         </h2>
-        <form className="grid gap-4 xl:w-3/4 my-6 pb-4">
+        <form className="grid gap-4 xl:w-1/2 my-6 pb-4">
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
@@ -56,10 +56,10 @@ const Cart = () => {
             onChange={handleChange}
           />
 
-          <div className="flex justify-start">
+          <div className="flex justify-center lg:justify-start">
             <button
               type="submit"
-              className="bg-cyan py-3 px-6 sm:px-10 text-white shadow-md"
+              className="bg-cyan w-full xl:w-1/2 py-3 px-6 sm:px-10 text-white shadow-md"
             >
               Finish my purchase
             </button>

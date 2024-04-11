@@ -6,13 +6,12 @@ const CartItem = ({ item }) => {
   const { removeFromCart } = useCartContext();
 
   return (
-    <div className="flex justify-between items-center bg-white border border-borderGray shadow-lg my-5 p-4 max-w-xl gap-6 rounded-md">
+    <div className="flex flex-col lg:flex-row justify-between items-center bg-white border border-borderGray shadow-lg my-5 p-4 2xl:max-w-xl gap-6 rounded-md">
       <Image
         src={item.image}
         width={100}
         height={100}
         alt={item.title}
-        className="flex justify-start items-start"
       />
       <div className="flex flex-col">
         <div className="text-black">{item.title}</div>
