@@ -8,8 +8,6 @@ const ProductsList = async ({ category }) => {
     },
   }).then((r) => r.json());
 
-  console.log("ITEMS", items);
-
   try {
     if (!items || !items.length) throw Error("No products yet");
 
