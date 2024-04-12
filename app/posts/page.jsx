@@ -1,5 +1,5 @@
 import Image from "next/image";
-import imgProductRandom from "@/public/imgProductRandom.png";
+import random from "@/public/itech_logo.png";
 
 export const Posts = () => {
   return (
@@ -36,7 +36,7 @@ export const Posts = () => {
             <a className="flex items-center" href="#">
               <Image
                 className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
-                src={imgProductRandom}
+                src={random}
                 width={100}
                 height={100}
                 alt="avatar"
