@@ -12,6 +12,7 @@ import { GrGroup } from "react-icons/gr";
 import { IoMailOutline } from "react-icons/io5";
 import { BsPostcard } from "react-icons/bs";
 import CartWidget from "../cart/CartWidget";
+import add_banner from "@/public/add_banner.png";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -150,11 +151,27 @@ export const NavBar = () => {
 
       {isShopPage && (
         <>
-          <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 sm:mt-0 bg-red h-40 lg:h-72 flex items-center justify-center">
-            publicidad
+          <div className="w-11/12 md:w-3/5 lg:w-1/2 rounded-xl mb-12 mt-7 lg:mt-0 h-40 lg:h-72 flex items-center justify-center">
+            <div className="hidden lg:flex">
+              <Image
+                src={add_banner}
+                width={580}
+                height={100}
+                alt="add"
+                className="rounded-xl"
+              />
+            </div>
+            <div className="lg:hidden">
+              <Image
+                src={add_banner}
+                width={440}
+                height={100}
+                alt="add"
+                className="rounded-xl"
+              />
+            </div>
           </div>
-
-          <section className="flex justify-start text-darkBlue absolute bottom-0 w-full h-[63%] sm:h-[67%] lg:h-[49%] 2xl:h-[53%] bg-gradient-to-b from-darkBlue -z-10" />
+          <section className="flex justify-start text-darkBlue absolute bottom-0 w-full h-[63%] sm:h-[63%] lg:h-[49%] 2xl:h-[53%] bg-gradient-to-b from-darkBlue -z-10" />
         </>
       )}
     </div>
