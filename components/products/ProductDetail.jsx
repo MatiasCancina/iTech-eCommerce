@@ -12,8 +12,7 @@ const ProductDetail = async ({ id }) => {
   return (
     <div className="py-16 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
       <div className="bg-white rounded-xl p-6 w-11/12 lg:w-full">
-        <div className="flex flex-col items-center">
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:flex-row justify-center items-center xl:space-x-20">
             <Image
               src={item.image}
               alt={item.title}
@@ -33,7 +32,6 @@ const ProductDetail = async ({ id }) => {
               <QtySelector item={item} />
             </div>
           </div>
-        </div>
       </div>
     </div>
   );
