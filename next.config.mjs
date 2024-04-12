@@ -4,11 +4,39 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "c0.klipartz.com",
+        hostname: "resource.logitech.com",
       },
       {
         protocol: "https",
-        hostname: "www.google.com",
+        hostname: "assets2.razerzone.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.germanos.gr",
+      },
+      {
+        protocol: "https",
+        hostname: "images.samsung.com",
+      },
+      {
+        protocol: "https",
+        hostname: "maconline.de",
+      },
+      {
+        protocol: "https",
+        hostname: "dist.contentdriver.com.au",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.corsair.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.duckychannel.com.tw",
+      },
+      {
+        protocol: "https",
+        hostname: "media.steelseriescdn.com",
       },
     ],
   },
