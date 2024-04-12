@@ -27,8 +27,8 @@ const Cart = () => {
             <CartItem item={item} key={item.id} />
           ))}
         </ul>
-        <h2 className="text-black text-2xl pb-3 my-3 border-b border-borderGray">
-          Total: {totalPrice()}{" "}
+        <h2 className="text-black font-semibold text-2xl pb-3 my-3 border-b border-borderGray">
+          Total: $ {totalPrice()}
         </h2>
         <form className="grid gap-4 xl:w-1/2 my-6 pb-4">
           <div className="grid grid-cols-2 gap-4">
