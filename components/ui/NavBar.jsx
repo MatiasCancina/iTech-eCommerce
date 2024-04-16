@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { BsCart2 } from "react-icons/bs";
+import { CiShoppingBasket } from "react-icons/ci";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -30,7 +30,7 @@ export const NavBar = () => {
     {
       text: "Shop",
       path: "/",
-      icon: <BsCart2 />,
+      icon: <CiShoppingBasket />,
     },
     {
       text: "Us",
@@ -112,9 +112,9 @@ export const NavBar = () => {
             <Image src={itech_logo} width={60} height={60} alt="itech logo" />
           </Link>
 
-          <Link href="/cart" className="text-white p-3 rounded-full">
-            <BsCart2 className="text-2xl" />
-          </Link>
+          {/* <Link href="/cart" className="text-white p-3 rounded-full"> */}
+            <CartWidget />
+          {/* </Link> */}
         </div>
 
         {/* Mobile Dropdown Menu */}
