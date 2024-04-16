@@ -21,7 +21,7 @@ const Cart = () => {
       <h1 className="font-semibold text-4xl border-b border-gray text-cyan">
         YOUR PURCHASE
       </h1>
-      <div className="bg-white px-5 my-3 rounded-md">
+      <div className="bg-white px-5 my-5 rounded-md">
         <ul className="grid grid-cols-2 gap-4">
           {cart.map((item) => (
             <CartItem item={item} key={item.id} />
