@@ -2,6 +2,7 @@
 import CartItem from "@/components/cart/CartItem";
 import { useCartContext } from "@/components/context/CartContext";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { cart, totalPrice } = useCartContext();
@@ -9,11 +10,27 @@ const Cart = () => {
     firstName: "",
     lastName: "",
     email: "",
-    text: "",
+    cart,
   });
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await fetch("http://localhost:3000/api/cart", {
+      method: "POST",
+      body: JSON.stringify(values),
+    });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      iconColor: "#457b9d",
+      title: "Purchase done!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   return (
@@ -30,7 +47,7 @@ const Cart = () => {
         <h2 className="text-black font-semibold text-2xl pb-3 my-3 border-b border-borderGray">
           Total: $ {totalPrice()}
         </h2>
-        <form className="grid gap-4 xl:w-1/2 my-6 pb-4">
+        <form className="grid gap-4 xl:w-1/2 my-6 pb-4" onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
@@ -69,5 +86,4 @@ const Cart = () => {
     </main>
   );
 };
-
 export default Cart;
