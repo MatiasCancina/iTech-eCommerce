@@ -3,7 +3,8 @@ import "./globals.css";
 import { NavBar } from "@/components/ui/NavBar";
 import Footer from "@/components/ui/Footer";
 import { CartProvider } from "@/components/context/CartContext";
-import favicon from '@/public/itech_logo.png'
+import favicon from "@/public/itech_logo.png";
+import { AuthProvider } from "@/components/context/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({ children }) {
         <link rel="icon" href={favicon} />
       </head>
       <body className={inter.className}>
-        <CartProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
