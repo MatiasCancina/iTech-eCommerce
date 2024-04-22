@@ -38,6 +38,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.steelseriescdn.com",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
     ],
   },
 };
