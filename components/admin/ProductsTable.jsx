@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const ProductsTable = async () => {
   const items = await fetch(`http://localhost:3000/api/products/all`, {
