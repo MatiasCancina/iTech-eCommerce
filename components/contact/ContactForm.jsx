@@ -31,7 +31,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" my-16 px-3 sm:px-20 lg:px-40 xl:px-52 2xl:px-96 select-none">
+    <div className="my-16 px-3 sm:px-20 lg:px-40 xl:px-52 2xl:px-96 select-none">
       <h1 className="font-semibold text-4xl border-b border-gray text-cyan">
         CONTACT US
       </h1>
