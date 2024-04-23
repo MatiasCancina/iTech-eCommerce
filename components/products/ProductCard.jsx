@@ -16,6 +16,8 @@ const ProductCard = ({ item }) => {
               width={200}
               height={200}
               style={{ objectFit: "contain" }}
+              placeholder="blur"
+              blurDataURL="data:..."
             />
           ) : (
             <p>no image </p>
