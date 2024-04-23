@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProductsTable = async () => {
-  const items = await fetch(`http://localhost:3000/api/products/all`, {
-    cache: "no-store",
-    next: {
-      revalidate: 30,
-    },
-  }).then((r) => r.json());
+  const items = await fetch(
+    `http://${process.env.VERCEL_URL}/api/products/all`,
+    {
+      cache: "no-store",
+      next: {
+        revalidate: 30,
+      },
+    }
+  ).then((r) => r.json());
 
   return (
     <div className="overflow-x-auto">
