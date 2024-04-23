@@ -40,7 +40,7 @@ const CartForm = () => {
       </h1>
       <div className="bg-white px-5 my-5 rounded-md">
         <ul className="grid grid-cols-2 gap-4">
-          {cart.map((item) => (
+          {cart && cart.map((item) => (
             <CartItem item={item} key={item.id} />
           ))}
         </ul>
