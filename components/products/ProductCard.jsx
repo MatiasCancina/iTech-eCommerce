@@ -9,18 +9,26 @@ const ProductCard = ({ item }) => {
         className="flex flex-col rounded border border-borderGray h-52 sm:h-72 2xl:h-80"
       >
         <div className="border-b border-b-borderGray px-4 mb-2 flex justify-center items-center h-24 sm:h-44">
-          <Image
-            alt={item.title}
-            src={item.image}
-            width={200}
-            height={200}
-            style={{ objectFit: "contain" }}
-          />
+          {item.image ? (
+            <Image
+              alt={item.title}
+              src={item.image}
+              width={200}
+              height={200}
+              style={{ objectFit: "contain" }}
+            />
+          ) : (
+            <p>no image </p>
+          )}
         </div>
 
         <div className="space-y-2 p-3 ">
-          <p className="text-lg text-black xl:text-xl 2xl:text-2xl font-medium">$ {item.price}</p>
-          <h4 className="text-black flex items-start text-sm sm:text-base justify-start sm:h-10">{item.title}</h4>
+          <p className="text-lg text-black xl:text-xl 2xl:text-2xl font-medium">
+            $ {item.price}
+          </p>
+          <h4 className="text-black flex items-start text-sm sm:text-base justify-start sm:h-10">
+            {item.title}
+          </h4>
         </div>
       </Link>
     </article>

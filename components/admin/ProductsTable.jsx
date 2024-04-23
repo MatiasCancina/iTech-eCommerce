@@ -11,7 +11,10 @@ const ProductsTable = async () => {
 
   return (
     <div className="overflow-x-auto">
-      <Link href='admin/create' className="bg-cyan py-3 px-6 sm:px-10 rounded-md text-white shadow-md mt-5">
+      <Link
+        href="admin/create"
+        className="bg-cyan py-3 px-6 sm:px-10 rounded-md text-white shadow-md mt-5"
+      >
         Create new
       </Link>
       <table className="w-full my-5 rounded-md bg-white text-xs lg:text-sm text-left text-gray">
@@ -51,12 +54,16 @@ const ProductsTable = async () => {
               <td className="p-2">{item.inStock}</td>
               <td className="p-2">{item.type}</td>
               <td className="p-2">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={80}
-                  height={80}
-                />
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={80}
+                    height={80}
+                  />
+                ) : (
+                  <p>no image </p>
+                )}
               </td>
               <td className="p-2">{item.id}</td>
               <td className="p-2 truncate max-w-prose">{item.description}</td>
