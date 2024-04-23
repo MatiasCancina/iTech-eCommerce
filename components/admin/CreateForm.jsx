@@ -1,12 +1,25 @@
 "use client";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/firebase/config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "@/firebase/config";
+import Swal from "sweetalert2";
 
-const createProduct = async (values) => {
+const createProduct = async (values, ) => {
   const docRef = doc(db, "products", values.id);
-  return setDoc(docRef, { ...values }).then(() =>
-    console.log("Product created!")
+
+  return setDoc(docRef, {
+    ...values,
+    image: values.image,
+  }).then(() =>
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      iconColor: "#457b9d",
+      title: "Product created!",
+      showConfirmButton: false,
+      timer: 1500,
+    })
   );
 };
 
@@ -18,10 +31,21 @@ const CreateForm = () => {
     price: 0,
     type: "",
     id: 13,
+    image: null,
   });
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleImageInp = async (e) => {
+    const storageRef = ref(storage, values.id.toString());
+
+    const fileSnapshot = await uploadBytes(storageRef, e.target.files[0]);
+
+    const fileURL = await getDownloadURL(fileSnapshot.ref);
+
+    setValues({ ...values, image: fileURL });
   };
 
   const handleSubmit = async (e) => {
@@ -39,6 +63,15 @@ const CreateForm = () => {
           className="p-2 rounded w-full border border-cyan block"
           name="id"
           onChange={handleChange}
+        />
+
+        <label>Image: </label>
+        <input
+          type="file"
+          required
+          className="p-2 rounded w-full border border-cyan block"
+          name="image"
+          onChange={handleImageInp}
         />
 
         <label>Name: </label>
