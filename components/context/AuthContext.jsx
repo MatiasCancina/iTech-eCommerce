@@ -38,8 +38,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
-
       if (user) {
         setUser({
           logged: true,
