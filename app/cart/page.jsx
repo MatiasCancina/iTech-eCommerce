@@ -1,6 +1,10 @@
 import CartForm from "@/components/cart/CartForm";
 
 const Cart = () => {
-  return <CartForm />;
+  return (
+    <>
+      <CartForm />;
+    </>
+  );
 };
 export default Cart;

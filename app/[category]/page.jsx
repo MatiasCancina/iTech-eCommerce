@@ -17,7 +17,7 @@ export function generateStaticParams() {
   ];
 }
 
-export const revalidate = 3600 // 1 hour
+export const revalidate = 3600; // 1 hour
 
 const Products = ({ params }) => {
   const { category } = params;
@@ -45,7 +45,11 @@ const Products = ({ params }) => {
       </div>
     );
   } catch (error) {
-    return <Error errorMessage={error.message} />;
+    return (
+      <>
+        <Error errorMessage={error.message} />;
+      </>
+    );
   }
 };
 

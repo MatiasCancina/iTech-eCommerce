@@ -1,7 +1,11 @@
 import CreateForm from "@/components/admin/CreateForm";
 
 const CreatePage = () => {
-  return <CreateForm />;
+  return (
+    <>
+      <CreateForm />;
+    </>
+  );
 };
 
 export default CreatePage;

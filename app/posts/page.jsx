@@ -1,7 +1,11 @@
 import { PostsList } from "@/components/posts/PostsList";
 
 export const Posts = () => {
-  return <PostsList />;
+  return (
+    <>
+      <PostsList />;
+    </>
+  );
 };
 
 export default Posts;
