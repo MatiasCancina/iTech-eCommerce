@@ -21,7 +21,11 @@ const ProductsList = async ({ category }) => {
       </section>
     );
   } catch (error) {
-    return <p>No products yet</p>;
+    return (
+      <>
+        <p>No products yet</p>;
+      </>
+    );
   }
 };
 
