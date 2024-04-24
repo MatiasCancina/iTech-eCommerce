@@ -23,7 +23,9 @@ const ProductDetail = async ({ id }) => {
               priority
             />
           ) : (
-            <p>no image </p>
+            <>
+              <p>no image </p>
+            </>
           )}
           <div className="flex flex-col space-y-3">
             <div>

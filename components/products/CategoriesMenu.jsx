@@ -25,6 +25,7 @@ const CategoriesMenu = () => {
   const pathname = usePathname();
 
   return (
+    <>
     <aside className="flex justify-start items-center lg:flex-col gap-3 lg:w-1/6">
       {links.map((link) => (
         <Link
@@ -38,6 +39,7 @@ const CategoriesMenu = () => {
         </Link>
       ))}
     </aside>
+    </>
   );
 };
 

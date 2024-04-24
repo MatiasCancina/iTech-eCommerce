@@ -62,7 +62,9 @@ const ProductsTable = async () => {
                     height={80}
                   />
                 ) : (
-                  <p>no image </p>
+                  <>
+                    <p>no image </p>
+                  </>
                 )}
               </td>
               <td className="p-2">{item.id}</td>

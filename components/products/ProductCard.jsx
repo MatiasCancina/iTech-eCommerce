@@ -20,7 +20,9 @@ const ProductCard = ({ item }) => {
               blurDataURL="data:..."
             />
           ) : (
-            <p>no image </p>
+            <>
+              <p>no image </p>
+            </>
           )}
         </div>
 
