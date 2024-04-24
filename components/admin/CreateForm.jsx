@@ -10,7 +10,7 @@ const createProduct = async (values) => {
   const price = parseFloat(values.price);
   const inStock = parseInt(values.inStock);
 
-  const docRef = doc(db, "products", values.id);
+  const docRef = doc(db, "products", values.id.toString());
 
   return setDoc(docRef, {
     ...values,
@@ -58,16 +58,17 @@ const CreateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     createProduct(values);
+    
   };
   return (
     <div className="my-16 p-8 mx-3 sm:mx-20 lg:mx-40 xl:mx-52 2xl:mx-96 select-none bg-white rounded">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="">
         <label>Id: </label>
         <input
           type="number"
           value={values.id}
           required
-          className="p-2 rounded w-full border border-cyan block"
+          className="p-2 rounded w-full border border-cyan block mb-4"
           name="id"
           onChange={handleChange}
         />
@@ -76,7 +77,7 @@ const CreateForm = () => {
         <input
           type="file"
           required
-          className="p-2 rounded w-full border border-cyan block"
+          className="p-2 rounded w-full border border-cyan block mb-4"
           name="image"
           onChange={handleImageInp}
         />
@@ -86,7 +87,7 @@ const CreateForm = () => {
           type="text"
           value={values.title}
           required
-          className="p-2 rounded w-full border border-cyan block"
+          className="p-2 rounded w-full border border-cyan block mb-4"
           name="title"
           onChange={handleChange}
         />
@@ -96,7 +97,7 @@ const CreateForm = () => {
           type="number"
           value={values.price}
           required
-          className="p-2 rounded w-full border border-cyan block"
+          className="p-2 rounded w-full border border-cyan block mb-4"
           name="price"
           onChange={handleChange}
         />
@@ -106,20 +107,22 @@ const CreateForm = () => {
           type="number"
           value={values.inStock}
           required
-          className="p-2 rounded w-full border border-cyan block"
+          className="p-2 rounded w-full border border-cyan block mb-4"
           name="inStock"
           onChange={handleChange}
         />
 
         <label>Category: </label>
         <select
-          id="category"
-          className="p-2 rounded w-full border border-cyan block"
-          name="category"
+          className="p-2 rounded w-full border border-cyan block mb-4"
+          name="type"
+          required
           onChange={handleChange}
-          multiple={true}
-          value={selectedOptions}
+          value={values.type}
         >
+          <option value="" disabled>
+            Select a category
+          </option>
           <option value="monitors">Monitors</option>
           <option value="keyboards">Keyboards</option>
           <option value="mouses">Mouses</option>
@@ -130,7 +133,7 @@ const CreateForm = () => {
           type="text"
           value={values.description}
           required
-          className="resize-none h-24 p-2 rounded w-full border border-cyan block"
+          className="resize-none h-24 p-2 rounded w-full border border-cyan block mb-4"
           name="description"
           onChange={handleChange}
         />
