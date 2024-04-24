@@ -6,30 +6,49 @@ const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() => {
-    if (typeof window !== "undefined") {
-      const cartSaved = localStorage.getItem("cart");
-      const initialValue = JSON.parse(cartSaved);
-      return initialValue || [];
-    }
-  });
+  // const [cart, setCart] = useState(() => {
+  //   if (typeof window !== "undefined") {
+  //     const cartSaved = localStorage.getItem("cart");
+  //     const initialValue = JSON.parse(cartSaved);
+  //     return initialValue || [];
+  //   }
+  // });
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     async function loadCartFromLocalStorage() {
+  //       const storedCart = await localStorage.getItem("cart");
+  //       if (storedCart) {
+  //         setCart(JSON.parse(storedCart));
+  //       }
+  //     }
+  //     loadCartFromLocalStorage();
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   if(typeof window !== 'undefined'){
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  //   }
+  // }, [cart]);
+
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      async function loadCartFromLocalStorage() {
-        const storedCart = await localStorage.getItem("cart");
-        if (storedCart) {
-          setCart(JSON.parse(storedCart));
-        }
-      }
-      loadCartFromLocalStorage();
+    const cartSaved = localStorage.getItem("cart");
+    if (cartSaved) {
+      setCart(JSON.parse(cartSaved));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (cart.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+      localStorage.removeItem("cart");
+    }
   }, [cart]);
-
+  
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
@@ -48,6 +67,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
+    if (!cart) return 0;
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
@@ -65,7 +85,6 @@ export const CartProvider = ({ children }) => {
         totalPrice,
         emptyCart,
         cart,
-        setCart,
       }}
     >
       {children}
