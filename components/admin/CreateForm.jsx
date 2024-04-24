@@ -5,11 +5,18 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/firebase/config";
 import Swal from "sweetalert2";
 
-const createProduct = async (values, ) => {
+const createProduct = async (values) => {
+  const id = parseInt(values.id);
+  const price = parseFloat(values.price);
+  const inStock = parseInt(values.inStock);
+
   const docRef = doc(db, "products", values.id);
 
   return setDoc(docRef, {
     ...values,
+    id,
+    price,
+    inStock,
     image: values.image,
   }).then(() =>
     Swal.fire({
@@ -105,14 +112,18 @@ const CreateForm = () => {
         />
 
         <label>Category: </label>
-        <input
-          type="text"
-          value={values.type}
-          required
+        <select
+          id="category"
           className="p-2 rounded w-full border border-cyan block"
-          name="type"
+          name="category"
           onChange={handleChange}
-        />
+          multiple={true}
+          value={selectedOptions}
+        >
+          <option value="monitors">Monitors</option>
+          <option value="keyboards">Keyboards</option>
+          <option value="mouses">Mouses</option>
+        </select>
 
         <label>Description: </label>
         <input
