@@ -11,8 +11,8 @@ export default function Home() {
       <div className="bg-white rounded-xl p-5 w-11/12 lg:w-full">
         <div className="flex flex-col lg:flex-row justify-between">
           <ErrorBoundary fallback={<Error />}>
-            <CategoriesMenu />
             <Suspense fallback={<Loader />}>
+            <CategoriesMenu />
               <ProductsList category={"all"} />
             </Suspense>
           </ErrorBoundary>
