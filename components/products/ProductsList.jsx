@@ -1,27 +1,32 @@
-"use client";
-import useProductsFetch from "@/hooks/useProductsFetch";
 import ProductCard from "./ProductCard";
-import Loader from "../ui/Loader";
 
-const ProductsList = ({ category }) => {
-  const { items, loading } = useProductsFetch(category);
+const ProductsList = async ({ category }) => {
+  const items = await fetch(`http://localhost:3000/api/products/${category}`, {
+    cache: "force-cache",
+    next: {
+      revalidate: 30,
+    },
+  }).then((r) => r.json());
 
-  if (loading) {
-    return <Loader />;
-  }
+  try {
+    if (!items || !items.length) throw Error("No products yet");
 
-  return (
-    <>
+    return (
       <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
-        {items.length &&
-          items.map((item) => (
-            <div className="w-full" key={item.id}>
-              <ProductCard key={item.id} item={item} />
-            </div>
-          ))}
+        {items.map((item) => (
+          <div className="w-full" key={item.id}>
+            <ProductCard key={item.id} item={item} />
+          </div>
+        ))}
       </section>
-    </>
-  );
+    );
+  } catch (error) {
+    return (
+      <>
+        <p>No products yet</p>;
+      </>
+    );
+  }
 };
 
 export default ProductsList;
