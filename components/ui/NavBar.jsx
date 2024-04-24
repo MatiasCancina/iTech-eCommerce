@@ -112,9 +112,7 @@ export const NavBar = () => {
             <Image src={itech_logo} width={60} height={60} alt="itech logo" />
           </Link>
 
-          {/* <Link href="/cart" className="text-white p-3 rounded-full"> */}
             <CartWidget />
-          {/* </Link> */}
         </div>
 
         {/* Mobile Dropdown Menu */}
