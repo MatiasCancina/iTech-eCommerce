@@ -75,16 +75,6 @@ const CreateForm = () => {
   return (
     <div className="my-16 p-8 mx-3 sm:mx-20 lg:mx-40 xl:mx-52 2xl:mx-96 select-none bg-white rounded">
       <form onSubmit={handleSubmit} className="">
-        {/* <label>Id: </label>
-        <input
-          type="number"
-          value={values.id}
-          required
-          className="p-2 rounded w-full border border-cyan block mb-4"
-          name="id"
-          onChange={handleChange}
-        /> */}
-
         <label>Name: </label>
         <input
           type="text"
