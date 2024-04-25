@@ -3,14 +3,15 @@ import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/firebase/config";
+import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
 const createProduct = async (values) => {
-  const id = parseInt(values.id);
+  const id = uuidv4();
   const price = parseFloat(values.price);
   const inStock = parseInt(values.inStock);
 
-  const docRef = doc(db, "products", values.id.toString());
+  const docRef = doc(db, "products", id.toString());
 
   return setDoc(docRef, {
     ...values,
@@ -45,8 +46,8 @@ const CreateForm = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleImageInp = async (e) => {
-    const storageRef = ref(storage, values.id.toString());
+  const handleImageChange = async (e) => {
+    const storageRef = ref(storage, uuidv4());
 
     const fileSnapshot = await uploadBytes(storageRef, e.target.files[0]);
 
@@ -57,13 +58,24 @@ const CreateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    createProduct(values);
-    
+
+    if (values.title.length > 20) {
+      Swal.fire({
+        icon: "warning",
+        title: "Name Limit Exceeded",
+        text: "The name cannot exceed 25 characters.",
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+    } else {
+      createProduct(values);
+    }
   };
   return (
     <div className="my-16 p-8 mx-3 sm:mx-20 lg:mx-40 xl:mx-52 2xl:mx-96 select-none bg-white rounded">
       <form onSubmit={handleSubmit} className="">
-        <label>Id: </label>
+        {/* <label>Id: </label>
         <input
           type="number"
           value={values.id}
@@ -71,16 +83,7 @@ const CreateForm = () => {
           className="p-2 rounded w-full border border-cyan block mb-4"
           name="id"
           onChange={handleChange}
-        />
-
-        <label>Image: </label>
-        <input
-          type="file"
-          required
-          className="p-2 rounded w-full border border-cyan block mb-4"
-          name="image"
-          onChange={handleImageInp}
-        />
+        /> */}
 
         <label>Name: </label>
         <input
@@ -91,6 +94,31 @@ const CreateForm = () => {
           name="title"
           onChange={handleChange}
         />
+
+        <label>Image: </label>
+        <input
+          type="file"
+          required
+          className="p-2 rounded w-full border border-cyan block mb-4"
+          name="image"
+          onChange={handleImageChange}
+        />
+
+        <label>Category: </label>
+        <select
+          className="p-2 rounded w-full border border-cyan block mb-4"
+          name="type"
+          required
+          onChange={handleChange}
+          value={values.type}
+        >
+          <option value="" disabled>
+            Select a category
+          </option>
+          <option value="monitors">Monitors</option>
+          <option value="keyboards">Keyboards</option>
+          <option value="mouses">Mouses</option>
+        </select>
 
         <label>Price: </label>
         <input
@@ -111,22 +139,6 @@ const CreateForm = () => {
           name="inStock"
           onChange={handleChange}
         />
-
-        <label>Category: </label>
-        <select
-          className="p-2 rounded w-full border border-cyan block mb-4"
-          name="type"
-          required
-          onChange={handleChange}
-          value={values.type}
-        >
-          <option value="" disabled>
-            Select a category
-          </option>
-          <option value="monitors">Monitors</option>
-          <option value="keyboards">Keyboards</option>
-          <option value="mouses">Mouses</option>
-        </select>
 
         <label>Description: </label>
         <input
