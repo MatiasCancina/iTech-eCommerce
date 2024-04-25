@@ -3,8 +3,7 @@ import Image from "next/image";
 
 const Loader = () => {
   return (
-    <div className=" flex items-center justify-center w-full lg:w-1/2">
-        <div className="flex justify-start items-center w-full">
+    <div className=" flex items-center justify-center w-full">
           <Image
             src={itech_logo}
             width={150}
@@ -12,7 +11,6 @@ const Loader = () => {
             alt={"Loader"}
             className="animate-pulse"
           />
-        </div>
     </div>
   )
 }

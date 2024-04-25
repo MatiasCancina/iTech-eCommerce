@@ -13,11 +13,11 @@ const ProductsTable = async () => {
     <div className="overflow-x-auto">
       <Link
         href="admin/create"
-        className="bg-cyan py-3 px-6 sm:px-10 rounded-md text-white shadow-md mt-5"
+        className="bg-cyan py-3 px-6 sm:px-10 rounded-md text-white shadow-md "
       >
         Create new
       </Link>
-      <table className="w-full my-5 rounded-md bg-white text-xs lg:text-sm text-left text-gray">
+      <table className="w-full mt-5 rounded-md bg-white text-xs lg:text-sm text-left text-gray">
         <thead className="text-base text-gray uppercase">
           <tr>
             <th scope="col" className="px-3 py-2">

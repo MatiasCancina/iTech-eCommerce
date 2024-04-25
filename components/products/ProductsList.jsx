@@ -12,7 +12,7 @@ const ProductsList = async ({ category }) => {
     if (!items || !items.length) throw Error("No products yet");
 
     return (
-      <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
+      <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full select-none">
         {items.map((item) => (
           <div className="w-full" key={item.id}>
             <ProductCard key={item.id} item={item} />
