@@ -5,9 +5,11 @@ import { NextResponse } from "next/server";
 export async function GET(_, { params }) {
   const { id } = params;
 
-  const docRef = doc(db, "products", id);
+  const docRef = doc(db, "products", id.toString());
 
   const docSnapshot = await getDoc(docRef);
 
+  if (!docSnapshot.exists() || docSnapshot === 'undefined') return NextResponse.json({})
+  
   return NextResponse.json(docSnapshot.data());
 }
