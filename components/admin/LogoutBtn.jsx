@@ -8,7 +8,7 @@ const LogoutBtn = () => {
     <>
       <button
         onClick={logout}
-        className="bg-red text-white py-3 px-6 sm:px-10 rounded-md shadow-md mt-5"
+        className="bg-red text-white py-2 px-3 lg:py-3 lg:px-6 rounded-md shadow-md"
       >
         Log Out
       </button>
