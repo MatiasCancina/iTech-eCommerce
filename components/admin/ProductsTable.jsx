@@ -4,12 +4,15 @@ import { FaRegEdit } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 
 const ProductsTable = async () => {
-  const items = await fetch(`http://localhost:3000/api/products/all`, {
-    cache: "no-store",
-    next: {
-      revalidate: 30,
-    },
-  }).then((r) => r.json());
+  const items = await fetch(
+    `http://${process.env.VERCEL_URL}/api/products/all`,
+    {
+      cache: "no-store",
+      next: {
+        revalidate: 30,
+      },
+    }
+  ).then((r) => r.json());
 
   return (
     <div className="overflow-x-auto">
@@ -72,9 +75,7 @@ const ProductsTable = async () => {
               <td className="p-2 text-center">{item.id}</td>
               <td className="p-2 truncate max-w-prose">{item.description}</td>
               <td className="flex space-x-3 justify-center">
-                <Link
-                  href={`/admin/edit/${item.id}`}
-                >
+                <Link href={`/admin/edit/${item.id}`}>
                   <FaRegEdit className="text-gray text-xl " />
                 </Link>
                 <button>

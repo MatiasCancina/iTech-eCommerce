@@ -2,12 +2,15 @@ import Image from "next/image";
 import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ id }) => {
-  const item = await fetch(`http://localhost:3000/api/product/${id}`, {
-    cache: "no-store",
-    next: {
-      revalidate: 0,
-    },
-  }).then((res) => res.json());
+  const item = await fetch(
+    `http://${process.env.VERCEL_URL}/api/product/${id}`,
+    {
+      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
+    }
+  ).then((res) => res.json());
 
   return (
     <div className="py-16 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
