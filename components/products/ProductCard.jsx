@@ -21,7 +21,7 @@ const ProductCard = ({ item }) => {
             />
           ) : (
             <>
-              <p>no image </p>
+              <p className="text-gray">no image </p>
             </>
           )}
         </div>

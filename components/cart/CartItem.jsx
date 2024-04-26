@@ -11,7 +11,7 @@ const CartItem = ({ item }) => {
         <Image src={item.image} width={100} height={100} alt={item.title} />
       ) : (
         <>
-          <p>no image</p>
+          <p className="text-gray">no image</p>
         </>
       )}
       <div className="flex flex-col">

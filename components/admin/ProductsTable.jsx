@@ -65,7 +65,7 @@ const ProductsTable = async () => {
                   />
                 ) : (
                   <>
-                    <p>no image </p>
+                    <p className="text-gray">no image </p>
                   </>
                 )}
               </td>

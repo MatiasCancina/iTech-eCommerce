@@ -16,7 +16,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:3000/api/contact`, {
+    await fetch("http://localhost:3000/api/contact", {
       method: "POST",
       body: JSON.stringify(values),
     });
@@ -36,7 +36,10 @@ const ContactForm = () => {
         CONTACT US
       </h1>
       <div className="flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="grid gap-4 xl:w-3/4 my-6">
+        <form
+          onSubmit={handleSubmit}
+          className="grid gap-4 xl:w-3/4 my-6"
+        >
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
