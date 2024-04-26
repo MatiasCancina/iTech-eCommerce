@@ -19,7 +19,7 @@ const CartForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://${process.env.VERCEL_URL}/api/cart`, {
+    await fetch(`http://localhost:3000/api/cart`, {
       method: "POST",
       body: JSON.stringify(values),
     });
