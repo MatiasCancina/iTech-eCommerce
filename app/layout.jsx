@@ -16,9 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <head>
-        <link rel="icon" href={favicon} />
-      </head> */}
+      <head>
+        <link rel="icon" href={'../public/itech_logo.png'} />
+      </head>
       <body className={inter.className}>
         <AuthProvider>
           <CartProvider>
