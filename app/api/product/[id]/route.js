@@ -12,7 +12,7 @@ export async function GET(_, { params }) {
 
   if (!docSnapshot.exists() || docSnapshot === 'undefined') return NextResponse.json({})
   
-  revalidatePath('/detail/[id]')
+  revalidatePath('/detail/[id]', '/detail/[id]')
 
   return NextResponse.json(docSnapshot.data());
 }
