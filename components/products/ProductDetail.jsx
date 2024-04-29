@@ -4,11 +4,7 @@ import QtySelector from "./QtySelector";
 const ProductDetail = async ({ id }) => {
   const item = await fetch(`http://localhost:3000/api/product/${id}`, {
     cache: "no-store",
-    next: {
-      revalidate: 0,
-    },
   }).then((res) => res.json());
-  console.log(item);
 
   if(!item) return  <div>Product not found</div>;
   return (

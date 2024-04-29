@@ -4,7 +4,7 @@ export const PostsList = async () => {
   const posts = await fetch(`http://localhost:3000/api/posts`, {
     cache: "no-store",
     next: {
-      revalidate: 30,
+      tags: ['posts'],
     },
   }).then((r) => r.json());
 

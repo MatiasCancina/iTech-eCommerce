@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase/config";
+import { revalidateTag } from "next/cache";
 
-export async function GET(request, { params }) {
+export async function GET(_, { params }) {
   const { category } = params;
 
   const productsRef = collection(db, "products");
@@ -16,5 +17,7 @@ export async function GET(request, { params }) {
 
   const docs = querySnapshot.docs.map((doc) => doc.data());
 
+  revalidateTag("products");
+F
   return NextResponse.json(docs);
 }

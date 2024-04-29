@@ -4,7 +4,7 @@ const ProductsList = async ({ category }) => {
   const items = await fetch(`http://localhost:3000/api/products/${category}`, {
     cache: "force-cache",
     next: {
-      revalidate: 30,
+      tags: ["products"],
     },
   }).then((r) => r.json());
 
