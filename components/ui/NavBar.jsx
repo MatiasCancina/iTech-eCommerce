@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import { CiShoppingBasket } from "react-icons/ci";
@@ -123,7 +122,7 @@ export const NavBar = () => {
               initial={{ opacity: 0, y: -7 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-darkBlue absolute w-full h-screen py-1 shadow-lg"
+              className="bg-darkBlue absolute w-screen h-screen py-1 shadow-lg bg-opacity-80"
               style={{ backdropFilter: "blur(5px)" }}
               onClick={closeMenu}
             >

@@ -6,9 +6,9 @@ const ProductCard = ({ item }) => {
     <article className="shadow-lg rounded m-3 hover:translate-y-1 hover:shadow-2xl transition">
       <Link
         href={`/detail/${item.id}`}
-        className="flex flex-col rounded border border-borderGray h-52 sm:h-72 2xl:h-80"
+        className="flex flex-col rounded border border-borderGray h-64 sm:h-72 2xl:h-80"
       >
-        <div className="border-b border-b-borderGray px-4 mb-2 flex justify-center items-center h-24 sm:h-44">
+        <div className="border-b border-b-borderGray px-4 mb-2 flex justify-center items-center h-28 sm:h-44 lg:h-40 xl:h-36 2xl:h-44">
           {item.image ? (
             <Image
               alt={item.title}

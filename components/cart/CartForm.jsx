@@ -76,7 +76,7 @@ const CartForm = () => {
           <div className="flex justify-center lg:justify-start">
             <button
               type="submit"
-              className="bg-cyan w-full xl:w-1/2 py-3 px-6 sm:px-10 text-white shadow-md"
+              className="bg-cyan w-full xl:w-1/2 py-3 px-6 sm:px-10 text-white shadow-md rounded-md"
             >
               Finish my purchase
             </button>
