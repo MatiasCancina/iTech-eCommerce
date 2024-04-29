@@ -24,13 +24,13 @@ const QtySelector = ({ item }) => {
 
   return (
     <div className="flex flex-col gap-3 mt-6">
-      <Counter max={item.inStock} counter={quantity} setCounter={setQuantity} />
       {inCart ? (
         <Link href={"/cart"} className="bg-cyan text-white rounded py-3 flex items-center justify-center">
           Finish my purchase
         </Link>
       ) : (
         <>
+        <Counter max={item.inStock} counter={quantity} setCounter={setQuantity} />
           <button className="bg-white text-cyan border border-cyan font-medium rounded py-3" onClick={handleAdd}>
             Add to cart
           </button>
