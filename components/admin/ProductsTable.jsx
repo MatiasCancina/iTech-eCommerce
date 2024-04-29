@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaRegEdit } from "react-icons/fa";
-import { FiTrash2 } from "react-icons/fi";
+import DeleteProductBtn from "./DeleteProductBtn";
 
 const ProductsTable = async () => {
   const items = await fetch(`http://localhost:3000/api/products/all`, {
@@ -72,9 +72,7 @@ const ProductsTable = async () => {
                 <Link href={`/admin/edit/${item.id}`}>
                   <FaRegEdit className="text-gray text-xl " />
                 </Link>
-                <button>
-                  <FiTrash2 className="text-red text-xl " />
-                </button>
+                <DeleteProductBtn id={item.id}/>
               </td>
             </tr>
           ))}
