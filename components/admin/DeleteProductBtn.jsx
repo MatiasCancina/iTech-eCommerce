@@ -14,7 +14,7 @@ const DeleteProductBtn = ({ id }) => {
       confirmButtonColor: "#d90429",
 
       showCancelButton: true,
-    }).then(async(result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         Swal.fire({
           icon: "success",
@@ -22,10 +22,12 @@ const DeleteProductBtn = ({ id }) => {
           text: "The product has been deleted successufully",
           iconColor: "#457b9d",
           timer: 2500,
-          showConfirmButton:false
+          timerProgressBar: true,
+          showConfirmButton: false,
         });
         try {
-          await deleteDoc(doc(db, "products", id));3
+          await deleteDoc(doc(db, "products", id));
+          3;
           console.log("Product deleted successfully");
         } catch (error) {
           console.error("Error deleting product:", error);
