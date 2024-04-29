@@ -1,4 +1,3 @@
-"use client";
 import { GoMail } from "react-icons/go";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
