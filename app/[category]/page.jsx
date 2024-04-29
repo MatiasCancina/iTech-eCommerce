@@ -6,7 +6,8 @@ import Loader from "@/components/ui/Loader";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  return { title: `iTech - ${params.category}` };
+  const category = params.category.charAt(0).toUpperCase() + params.category.slice(1);
+  return { title: `iTech - ${category}` };
 }
 
 export function generateStaticParams() {
@@ -17,8 +18,6 @@ export function generateStaticParams() {
     { category: "keyboards" },
   ];
 }
-
-export const revalidate = 3600; // 1 hour
 
 const Products = ({ params }) => {
   const { category } = params;
