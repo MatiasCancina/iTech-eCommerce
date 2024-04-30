@@ -18,6 +18,7 @@ export async function GET(_, { params }) {
   const docs = querySnapshot.docs.map((doc) => doc.data());
 
   revalidateTag("products");
-
+  
+  if (!docs || docs === "undefined") return NextResponse.json({});
   return NextResponse.json(docs);
 }
