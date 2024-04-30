@@ -1,12 +1,15 @@
 import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ category }) => {
-  const items = await fetch(`http://${process.env.VERCEL_URL}/api/products/${category}`, {
-    cache: "force-cache",
-    next: {
-      tags: ["products"],
-    },
-  }).then((r) => r.json());
+  const items = await fetch(
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
+    {
+      cache: "force-cache",
+      next: {
+        tags: ["products"],
+      },
+    }
+  ).then((r) => r.json());
 
   try {
     if (!items || !items.length) throw Error("No products yet");

@@ -4,9 +4,12 @@ import { FaRegEdit } from "react-icons/fa";
 import DeleteProductBtn from "./DeleteProductBtn";
 
 const ProductsTable = async () => {
-  const items = await fetch(`http://${process.env.VERCEL_URL}/api/products/all`, {
-    cache: "no-store",
-  }).then((r) => r.json());
+  const items = await fetch(
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/all`,
+    {
+      cache: "no-store",
+    }
+  ).then((r) => r.json());
 
   return (
     <div className="overflow-x-auto">
@@ -72,7 +75,7 @@ const ProductsTable = async () => {
                 <Link href={`/admin/edit/${item.id}`}>
                   <FaRegEdit className="text-gray text-xl " />
                 </Link>
-                <DeleteProductBtn id={item.id}/>
+                <DeleteProductBtn id={item.id} />
               </td>
             </tr>
           ))}

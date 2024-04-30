@@ -19,7 +19,7 @@ const CartForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://${process.env.VERCEL_URL}/api/cart`, {
+    await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/cart`, {
       method: "POST",
       body: JSON.stringify(values),
     });
@@ -40,9 +40,7 @@ const CartForm = () => {
       </h1>
       <div className="bg-white px-5 my-5 rounded-md">
         <ul className="grid grid-cols-2 gap-4">
-          {cart && cart.map((item) => (
-            <CartItem item={item} key={item.id} />
-          ))}
+          {cart && cart.map((item) => <CartItem item={item} key={item.id} />)}
         </ul>
         <h2 className="text-black font-semibold text-2xl pb-3 my-3 border-b border-borderGray">
           Total: $ {totalPrice()}
