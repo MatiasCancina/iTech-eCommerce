@@ -3,7 +3,7 @@ import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ id }) => {
   const item = await fetch(
-    `http://${process.env.VERCEL_URL}/api/product/${id}`,
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/product/${id}`,
     {
       cache: "no-store",
     }

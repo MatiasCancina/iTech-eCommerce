@@ -19,10 +19,14 @@ const CartForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://${process.env.VERCEL_URL}/api/cart`, {
-      method: "POST",
-      body: JSON.stringify(values),
-    });
+    console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+    await fetch(
+      `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/cart`,
+      {
+        method: "POST",
+        body: JSON.stringify(values),
+      }
+    );
     Swal.fire({
       position: "top-end",
       icon: "success",
