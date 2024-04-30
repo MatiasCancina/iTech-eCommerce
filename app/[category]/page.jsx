@@ -10,14 +10,14 @@ export async function generateMetadata({ params, searchParams }, parent) {
   return { title: `iTech - ${category}` };
 }
 
-// export function generateStaticParams() {
-//   return [
-//     { category: "all" },
-//     { category: "mouses" },
-//     { category: "monitors" },
-//     { category: "keyboards" },
-//   ];
-// }
+export function generateStaticParams() {
+  return [
+    { category: "all" },
+    { category: "mouses" },
+    { category: "monitors" },
+    { category: "keyboards" },
+  ];
+}
 
 const Products = ({ params }) => {
   const { category } = params;
