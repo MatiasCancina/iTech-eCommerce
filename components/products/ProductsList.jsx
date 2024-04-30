@@ -12,7 +12,7 @@ const ProductsList = async ({ category }) => {
   ).then((r) => r.json());
 
   try {
-    if (!items || !items.length) throw Error("No products yet");
+    if (!items || !items.length) console.log("No products yet");
 
     return (
       <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full select-none">
