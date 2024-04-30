@@ -13,4 +13,5 @@ export async function GET() {
 //   revalidateTag("posts");
 
 //   return NextResponse.json(docs);
+  return NextResponse.json({});
 }
