@@ -50,6 +50,7 @@ export const NavBar = () => {
 
   const isShopPage =
     pathname === "/" ||
+    pathname === "/all" ||
     pathname === "/monitors" ||
     pathname === "/mouses" ||
     pathname === "/keyboards";

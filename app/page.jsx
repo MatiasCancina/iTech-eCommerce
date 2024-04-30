@@ -4,6 +4,7 @@ import Loader from "@/components/ui/Loader";
 import { Suspense } from "react";
 import ProductsList from "@/components/products/ProductsList";
 import CategoriesMenu from "@/components/products/CategoriesMenu";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row justify-between">
           <ErrorBoundary fallback={<Error />}>
             <Suspense fallback={<Loader />}>
-            <CategoriesMenu />
-              <ProductsList category={"all"} />
+            {/* <CategoriesMenu />
+              <ProductsList category={"all"} /> */}
+              <h1>Welcome</h1>
+              <Link href={'/all'}>go buy</Link>
             </Suspense>
           </ErrorBoundary>
         </div>
