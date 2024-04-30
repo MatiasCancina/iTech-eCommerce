@@ -4,7 +4,7 @@ import { FaRegEdit } from "react-icons/fa";
 import DeleteProductBtn from "./DeleteProductBtn";
 
 const ProductsTable = async () => {
-  const items = await fetch(`http://localhost:3000/api/products/all`, {
+  const items = await fetch(`http://${process.env.VERCEL_URL}/api/products/all`, {
     cache: "no-store",
   }).then((r) => r.json());
 
