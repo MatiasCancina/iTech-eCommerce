@@ -10,10 +10,14 @@ const ProductsList = async ({ category }) => {
       },
     }
   ).then((r) => r.json());
-  
+
   try {
-  if (!items || !items.length || items === "undefined") {
-      console.log("No products yet");
+    if (!items || !items.length || items === "undefined") {
+      console.log(
+        "log condicional",
+        `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
+      );
+      // console.log("No products yet");
     }
 
     return (
@@ -27,9 +31,10 @@ const ProductsList = async ({ category }) => {
     );
   } catch (error) {
     console.log(
+      "log error",
       `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
     );
-    console.log(error);
+    // console.log(error);
   }
 };
 
