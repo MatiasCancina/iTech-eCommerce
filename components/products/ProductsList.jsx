@@ -14,6 +14,7 @@ const ProductsList = async ({ category }) => {
   try {
     if (!items || !items.length || items === "undefined") {
       console.log("No products yet");
+      return null
     }
     
     return (
