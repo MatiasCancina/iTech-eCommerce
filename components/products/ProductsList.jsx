@@ -10,7 +10,7 @@ const ProductsList = async ({ category }) => {
       },
     },
     
-  ).then((r) => console.log('CONSOLE LOG RESPONSE', r.url));
+  ).then(console.log(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`));
 
 
   // const items = [
