@@ -11,7 +11,7 @@ const ProductsList = async ({ category }) => {
     }
   ).then((r) => r.json());
 
-  console.log('CONSOLE LOG FETCH ITEMS', items);
+  console.dir('CONSOLE LOG FETCH ITEMS', items);
 
   // const items = [
   //   {

@@ -18,7 +18,11 @@ export async function GET(_, { params }) {
   const docs = querySnapshot.docs.map((doc) => doc.data());
 
   revalidateTag("products");
-  
-  if (!docs || docs === "undefined") return NextResponse.json({});
+
+  if (!docs || docs == "undefined" || docs.length === 0) {
+    console.log("error fetch products");
+    return NextResponse.json({});
+  }
+
   return NextResponse.json(docs);
 }
