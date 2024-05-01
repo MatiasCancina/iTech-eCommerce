@@ -8,10 +8,10 @@ const ProductsList = async ({ category }) => {
       next: {
         tags: ["products"],
       },
-    }
-  ).then((r) => r.json());
+    },
+    
+  ).then((r) => console.log('CONSOLE LOG RESPONSE', r));
 
-  console.dir('CONSOLE LOG FETCH ITEMS', items);
 
   // const items = [
   //   {
@@ -50,8 +50,8 @@ const ProductsList = async ({ category }) => {
   // ];
 
   try {
-    if (!items || !items.length || items == "undefined")
-      console.log("No products yet");
+    // if (!items || !items.length || items == "undefined")
+    //   console.log("No products yet");
 
     return (
       <section className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full select-none">
