@@ -10,7 +10,7 @@ const ProductsList = async ({ category }) => {
       },
     },
     
-  ).then((r) => console.log('CONSOLE LOG RESPONSE', r));
+  ).then((r) => console.log('CONSOLE LOG RESPONSE', r.url));
 
 
   // const items = [
