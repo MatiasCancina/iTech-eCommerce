@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ category }) => {
   try {
-    const res = await fetch(
+    const items = await fetch(
       `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
       {
         cache: "force-cache",
@@ -10,11 +10,7 @@ const ProductsList = async ({ category }) => {
           tags: ["products"],
         },
       }
-    );
-
-    if (!res.ok) throw new Error("Failed to fetch data");
-
-    const items = await res.json();
+    ).then(r => r.json());
     
     if (!items || !items.length || items === "undefined") {
       console.log("No products yet");
