@@ -1,17 +1,19 @@
 import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ category }) => {
+  console.log(
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
+  );
   try {
-    const items = await fetch(
-      `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
-      {
-        cache: "force-cache",
-        next: {
-          tags: ["products"],
-        },
-      }
-    ).then((r) => r.json());
-
+  const items = await fetch(
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
+    {
+      cache: "force-cache",
+      next: {
+        tags: ["products"],
+      },
+    }
+  ).then((r) => r.json());
     if (!items || !items.length || items === "undefined") {
       console.log("No products yet");
     }
