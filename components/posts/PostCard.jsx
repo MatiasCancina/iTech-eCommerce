@@ -1,7 +1,7 @@
 import { IoPersonCircleOutline } from "react-icons/io5";
 export const PostCard = ({ post }) => {
   return (
-    <div className="p-10 m-5 bg-white rounded-lg shadow-xl  h-80 flex flex-col justify-center">
+    <div className="p-10 m-5 bg-white rounded-lg shadow-xl h-80 flex flex-col justify-center">
       <div className="flex justify-between items-center">
         <span className="font-light text-gray text-sm">{post.date}</span>
         <div className="flex items-center">
