@@ -13,10 +13,10 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row justify-between">
           <ErrorBoundary fallback={<Error />}>
             <Suspense fallback={<Loader />}>
-            {/* <CategoriesMenu />
-              <ProductsList category={"all"} /> */}
-              <h1>Welcome</h1>
-              <Link href={'/all'}>go buy</Link>
+            <CategoriesMenu />
+              <ProductsList category={"all"} />
+              {/* <h1>Welcome</h1>
+              <Link href={'/all'}>go buy</Link> */}
             </Suspense>
           </ErrorBoundary>
         </div>
