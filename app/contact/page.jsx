@@ -1,5 +1,8 @@
 import ContactForm from "@/components/contact/ContactForm";
-import React from "react";
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  return { title: `iTech - Contact` };
+}
 
 export const Contact = () => {
   return (

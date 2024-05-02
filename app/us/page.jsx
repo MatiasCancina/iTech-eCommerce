@@ -2,6 +2,10 @@ import Image from "next/image";
 import itech_logo from "@/public/itech_logo.png";
 import Link from "next/link";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  return { title: `iTech - Us` };
+}
+
 export const Us = () => {
   return (
     <div className="my-16 px-3 sm:px-20 lg:px-40 xl:px-52 2xl:px-96 select-none">

@@ -1,6 +1,10 @@
 import LogoutBtn from "@/components/admin/LogoutBtn";
 import ProductsTable from "@/components/admin/ProductsTable";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  return { title: `iTech - Admin` };
+}
+
 const Admin = () => {
   return (
     <div className="my-16 px-3 sm:px-20 select-none">
