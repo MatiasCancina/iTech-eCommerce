@@ -13,12 +13,20 @@ const ProductsTable = async () => {
 
   return (
     <div className="overflow-x-auto">
-      <Link
-        href="admin/create"
-        className="bg-cyan py-3 px-4 lg:px-6 sm:px-10 rounded-md text-white shadow-md "
-      >
-        Create new
-      </Link>
+      <div className="space-x-2">
+        <Link
+          href="admin/create"
+          className="bg-cyan py-3 px-4 lg:px-6 sm:px-10 rounded-md text-white shadow-md "
+        >
+          Create new
+        </Link>
+        <Link
+          href="admin/orders"
+          className="bg-cyan py-3 px-4 lg:px-6 sm:px-10 rounded-md text-white shadow-md "
+        >
+          Orders
+        </Link>
+      </div>
       <table className="w-full mt-5 rounded-md bg-white text-xs lg:text-sm text-left text-gray ">
         <thead className="text-base text-gray uppercase ">
           <tr>
