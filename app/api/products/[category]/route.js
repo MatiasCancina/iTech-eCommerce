@@ -19,7 +19,7 @@ export async function GET(_, { params }) {
 
   revalidateTag("products");
 
-  if (!docs || docs == "undefined" || docs.length === 0) {
+  if (!docs || docs === "undefined" || docs.length === 0) {
     console.log("error fetch products");
     return NextResponse.json({});
   }
