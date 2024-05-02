@@ -14,11 +14,11 @@ const firebaseConfig = {
 };
 
 console.log(firebaseConfig);
-console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+console.log(process.env.VERCEL_URL);
 console.log(process.env);
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider()
+export const provider = new GoogleAuthProvider();
