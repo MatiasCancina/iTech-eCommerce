@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth, provider } from "@/firebase/config";
+import { auth, db, provider } from "@/firebase/config";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,12 +8,16 @@ import {
   signOut,
   signInWithPopup,
 } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { useRouter } from "next/navigation";
 
 const AuthContext = createContext();
 
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
+  const router = useRouter();
+
   const [user, setUser] = useState({
     logged: false,
     email: null,
@@ -37,13 +41,21 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
       if (user) {
-        setUser({
-          logged: true,
-          email: user.email,
-          uid: user.uid,
-        });
+        const docRef = doc(db, "roles", user.uid);
+        const userDoc = await getDoc(docRef);
+
+        if (userDoc.data()?.role === "admin") {
+          setUser({
+            logged: true,
+            email: user.email,
+            uid: user.uid,
+          });
+        } else {
+          router.push("/unauthorized");
+          logout();
+        }
       } else {
         setUser({
           logged: false,
@@ -52,7 +64,7 @@ export const AuthProvider = ({ children }) => {
         });
       }
     });
-  }, []);
+  }, [router]);
 
   return (
     <AuthContext.Provider
