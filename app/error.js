@@ -21,7 +21,7 @@ export default function Error({ errorMessage, reset }) {
           </button>
           <p className="text-gray text-xl font-medium">or</p>
           <Link href={"/"} className="text-2xl text-blueLink font-medium">
-            iTech´s home page
+            go iTech´s home page
           </Link>
         </div>
       </div>
