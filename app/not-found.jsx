@@ -10,7 +10,7 @@ export default function NotFound() {
       </p>
       <div className="flex space-x-3 mt-2">
         <p className="text-2xl text-gray font-medium ">
-          Try searching or go
+          Try going
         </p>
         <Link href={"/"} className="text-2xl text-blueLink font-medium">
           iTech´s home page
