@@ -1,15 +1,16 @@
 import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ category }) => {
-  // const items = await fetch(
-  //   `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
-  //   {
-  //     cache: "force-cache",
-  //     next: {
-  //       tags: ["products"],
-  //     },
-  //   }
-  // ).then((r) => r.json());
+  const items = await fetch(
+    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
+    {
+      cache: "force-cache",
+      next: {
+        tags: ["products"],
+      },
+    }
+  ).then((r) => r.json());
+
   console.log(
     "log url",
     `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
@@ -17,11 +18,7 @@ const ProductsList = async ({ category }) => {
 
   try {
     if (!items || !items.length || items === "undefined") {
-      // console.log(
-      //   "log condicional",
-      //   `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
-      // );
-      console.log("No products yet");
+      return <p>No products yet</p>
     }
 
     return (
@@ -34,7 +31,7 @@ const ProductsList = async ({ category }) => {
       </section>
     );
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
