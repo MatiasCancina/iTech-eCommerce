@@ -9,7 +9,7 @@ const ProductDetail = async ({ id }) => {
     }
   ).then((res) => res.json());
 
-  if (!item) return <div>Product not found</div>;
+  if (item.title === undefined) throw new Error('Product not found');
 
   return (
     <div className="py-16 md:px-32 lg:px-40 xl:px-52 2xl:px-96 flex items-center justify-center select-none">
