@@ -27,6 +27,7 @@ const ContactForm = () => {
       title: "Message sent!",
       showConfirmButton: false,
       timer: 1500,
+      timerProgressBar: true,
     });
   };
 

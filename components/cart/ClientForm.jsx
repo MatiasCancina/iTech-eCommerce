@@ -74,7 +74,8 @@ const ClientForm = () => {
       title: "Purchase done!",
       text: `Order id: ${result}`,
       showConfirmButton: false,
-      timer: 1500,
+      timer: 3000,
+      timerProgressBar: true,
     });
     console.log(result);
   };
