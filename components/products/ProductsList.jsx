@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 const ProductsList = async ({ category }) => {
   try {
     const items = await fetch(
-      `http://${process.env.VERCEL_URL}/api/products/${category}`,
+      `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`,
       {
         cache: "force-cache",
         next: {
@@ -14,7 +14,7 @@ const ProductsList = async ({ category }) => {
 
     console.log(
       "log url",
-      `http://${process.env.VERCEL_URL}/api/products/${category}`
+      `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
     );
 
     if (!items || !items.length || items === "undefined") {

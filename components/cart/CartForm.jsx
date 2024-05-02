@@ -19,8 +19,8 @@ const CartForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(process.env.VERCEL_URL);
-    await fetch(`http://${process.env.VERCEL_URL}/api/cart`, {
+    console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+    await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/cart`, {
       method: "POST",
       body: JSON.stringify(values),
     });

@@ -14,8 +14,8 @@ const firebaseConfig = {
 };
 
 console.log(firebaseConfig);
-console.log(process.env.VERCEL_URL);
-console.log(process.env);
+console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+console.log(process.env.NEXT_PUBLIC);
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
