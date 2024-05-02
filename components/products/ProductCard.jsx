@@ -33,6 +33,12 @@ const ProductCard = ({ item }) => {
           <h4 className="text-black flex items-start text-sm sm:text-base justify-start sm:h-10">
             {item.title}
           </h4>
+
+          {item.inStock === 0 && (
+            <p className="text-red font-medium flex items-start text-sm sm:text-base justify-start">
+              No stock
+            </p>
+          )}
         </div>
       </Link>
     </article>
