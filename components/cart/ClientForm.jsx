@@ -1,6 +1,6 @@
 "use client";
 import { db } from "@/firebase/config";
-import { Timestamp, WriteBatch, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
+import { Timestamp, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
 import { useCartContext } from "../context/CartContext";
 import { useState } from "react";
 import Swal from "sweetalert2";
