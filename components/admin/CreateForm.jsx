@@ -38,7 +38,6 @@ const CreateForm = () => {
     inStock: 100,
     price: 0,
     type: "",
-    id: 13,
     image: null,
   });
 
