@@ -109,7 +109,7 @@ const ClientForm = () => {
 
       <button
         type="submit"
-        className="bg-cyan py-3 px-6 sm:px-10 text-white shadow-md"
+        className="bg-cyan rounded-sm py-3 px-6 sm:px-10 text-white shadow-md"
       >
         Finish my purchase
       </button>

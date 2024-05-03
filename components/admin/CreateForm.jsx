@@ -74,8 +74,9 @@ const CreateForm = () => {
   };
   return (
     <div className="my-16 p-8 mx-3 sm:mx-20 lg:mx-40 xl:mx-52 2xl:mx-96 select-none bg-white rounded">
-      <form onSubmit={handleSubmit} className="">
-        <label>Name: </label>
+      <h2 className="text-cyan font-semibold text-2xl pb-4">Create Product</h2>
+      <form onSubmit={handleSubmit} className="px-20">
+        <label className="text-black">Name: </label>
         <input
           type="text"
           value={values.title}
@@ -85,7 +86,7 @@ const CreateForm = () => {
           onChange={handleChange}
         />
 
-        <label>Image: </label>
+        <label className="text-black">Image: </label>
         <input
           type="file"
           required
@@ -94,7 +95,7 @@ const CreateForm = () => {
           onChange={handleImageChange}
         />
 
-        <label>Category: </label>
+        <label className="text-black">Category: </label>
         <select
           className="p-2 rounded w-full border border-cyan block mb-4"
           name="type"
@@ -110,7 +111,7 @@ const CreateForm = () => {
           <option value="mouses">Mouses</option>
         </select>
 
-        <label>Price: </label>
+        <label className="text-black">Price: </label>
         <input
           type="number"
           value={values.price}
@@ -120,7 +121,7 @@ const CreateForm = () => {
           onChange={handleChange}
         />
 
-        <label>Stock: </label>
+        <label className="text-black">Stock: </label>
         <input
           type="number"
           value={values.inStock}
@@ -130,7 +131,7 @@ const CreateForm = () => {
           onChange={handleChange}
         />
 
-        <label>Description: </label>
+        <label className="text-black">Description: </label>
         <input
           type="text"
           value={values.description}
@@ -141,7 +142,7 @@ const CreateForm = () => {
         />
         <button
           type="submit"
-          className="bg-cyan py-3 px-6 sm:px-10 text-white shadow-md"
+          className="bg-cyan rounded-md py-3 px-6 sm:px-10 text-white shadow-md"
         >
           Create
         </button>
