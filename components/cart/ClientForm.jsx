@@ -1,35 +1,36 @@
 "use client";
 import { db } from "@/firebase/config";
-import { Timestamp, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
+import { Timestamp, WriteBatch, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
 import { useCartContext } from "../context/CartContext";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
-
 const createOrder = async (values, items) => {
-  //   const docsPromises = items.map((id) => {
-  //     const docRef = doc(db, "products", id.toString());
-  //     return getDoc(docRef);
-  //   });
+  // const docsPromises = items.map((item) => {
+  //   const docRef = doc(db, "products", String(item.id));
+  //   return getDoc(docRef);
+  // });
 
-  //   const docs = await Promise.all(docsPromises);
-  //   const batch = writeBatch(db);
-  //   const outOfStock = [];
+  // const docs = await Promise.all(docsPromises);
+  // const batch = writeBatch(db);
+  // const outOfStock = [];
 
-  //   docs.forEach((doc) => {
-  //       const { inStock } = doc.data();
-  //       console.log(inStock);
-  //     const itemInCart = items.find((item) => item.id === doc.id);
-
+  // docs.forEach((doc, index) => {
+  //   if (doc.exists()) {
+  //     const { inStock } = doc.data();
+  //     const itemInCart = items[index];
   //     if (itemInCart.quantity >= inStock) {
   //       batch.update(doc.ref, { inStock: inStock - itemInCart.quantity });
   //     } else {
   //       outOfStock.push(itemInCart);
   //     }
-  //   });
-
-  //   if (outOfStock.length > 0) return outOfStock;
-
+  //   } else {
+  //     console.error(`Document does not exist for item ${items[index].id}`);
+  //   }
+  // });
+  
+  // if (outOfStock.length > 0) return outOfStock;
+  
   const order = {
     client: values,
     items: items.map((item) => ({
@@ -43,9 +44,10 @@ const createOrder = async (values, items) => {
 
   const docId = Timestamp.fromDate(new Date()).toMillis();
   const orderRef = doc(db, "orders", String(docId));
-  //   await batch.commit();
+  // await batch.commit();
   await setDoc(orderRef, order);
-
+     
+  console.log(docId);
   return docId;
 };
 
@@ -66,7 +68,10 @@ const ClientForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(values);
+    console.log(cart);
     const result = await createOrder(values, cart);
+    console.log(result);
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -77,7 +82,6 @@ const ClientForm = () => {
       timer: 3000,
       timerProgressBar: true,
     });
-    console.log(result);
   };
 
   return (
