@@ -27,8 +27,6 @@ const DeleteProductBtn = ({ id }) => {
         });
         try {
           await deleteDoc(doc(db, "products", id));
-          3;
-          console.log("Product deleted successfully");
         } catch (error) {
           console.error("Error deleting product:", error);
         }

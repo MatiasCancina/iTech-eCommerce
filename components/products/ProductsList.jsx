@@ -12,11 +12,6 @@ const ProductsList = async ({ category }) => {
       }
     ).then((r) => r.json());
 
-    console.log(
-      "log url",
-      `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`
-    );
-
     if (!items || !items.length || items === "undefined") {
       return <p>No products yet</p>;
     }

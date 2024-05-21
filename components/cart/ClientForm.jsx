@@ -28,9 +28,9 @@ const createOrder = async (values, items) => {
   //     console.error(`Document does not exist for item ${items[index].id}`);
   //   }
   // });
-  
+
   // if (outOfStock.length > 0) return outOfStock;
-  
+
   const order = {
     client: values,
     items: items.map((item) => ({
@@ -46,8 +46,7 @@ const createOrder = async (values, items) => {
   const orderRef = doc(db, "orders", String(docId));
   // await batch.commit();
   await setDoc(orderRef, order);
-     
-  console.log(docId);
+
   return docId;
 };
 
@@ -68,10 +67,7 @@ const ClientForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
-    console.log(cart);
     const result = await createOrder(values, cart);
-    console.log(result);
     Swal.fire({
       position: "top-end",
       icon: "success",
