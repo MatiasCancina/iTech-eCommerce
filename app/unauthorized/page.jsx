@@ -7,7 +7,7 @@ const Unauthorized = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray font-light">UNAUTHORIZED</h1>
         <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray font-light">you have not an administrator role</p>
         <div className="flex flex-col sm:flex-row mt-2 space-x-1 items-center">
-          <Link href={'/login'}
+          <Link href={'/admin'}
             className="xl:text-2xl text-blueLink font-medium"
           >
             Try again with an administrator email
