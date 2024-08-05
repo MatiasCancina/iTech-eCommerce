@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
       localStorage.removeItem("cart");
     }
   }, [cart]);
-  
+
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
@@ -42,7 +42,11 @@ export const CartProvider = ({ children }) => {
 
   const totalPrice = () => {
     if (!cart) return 0;
-    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const total = cart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    return parseFloat(total.toFixed(2));
   };
 
   const emptyCart = () => {
