@@ -6,31 +6,6 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const createOrder = async (values, items) => {
-  // const docsPromises = items.map((item) => {
-  //   const docRef = doc(db, "products", String(item.id));
-  //   return getDoc(docRef);
-  // });
-
-  // const docs = await Promise.all(docsPromises);
-  // const batch = writeBatch(db);
-  // const outOfStock = [];
-
-  // docs.forEach((doc, index) => {
-  //   if (doc.exists()) {
-  //     const { inStock } = doc.data();
-  //     const itemInCart = items[index];
-  //     if (itemInCart.quantity >= inStock) {
-  //       batch.update(doc.ref, { inStock: inStock - itemInCart.quantity });
-  //     } else {
-  //       outOfStock.push(itemInCart);
-  //     }
-  //   } else {
-  //     console.error(`Document does not exist for item ${items[index].id}`);
-  //   }
-  // });
-
-  // if (outOfStock.length > 0) return outOfStock;
-
   const order = {
     client: values,
     items: items.map((item) => ({
@@ -44,7 +19,6 @@ const createOrder = async (values, items) => {
 
   const docId = Timestamp.fromDate(new Date()).toMillis();
   const orderRef = doc(db, "orders", String(docId));
-  // await batch.commit();
   await setDoc(orderRef, order);
 
   return docId;
