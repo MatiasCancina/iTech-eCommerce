@@ -4,7 +4,6 @@ import Loader from "@/components/ui/Loader";
 import { Suspense } from "react";
 import ProductsList from "@/components/products/ProductsList";
 import CategoriesMenu from "@/components/products/CategoriesMenu";
-import Link from "next/link";
 
 export default function Home() {
   return (
